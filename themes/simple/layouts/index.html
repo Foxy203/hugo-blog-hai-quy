@@ -1,0 +1,58 @@
+{{ define "title" }}{{ .Site.Title }} - Trang chủ{{ end }}
+
+{{ define "main" }}
+<div class="home-content">
+    <section class="hero">
+        <h1>Chào mừng đến với {{ .Site.Title }}</h1>
+        <p class="hero-description">Blog chia sẻ kiến thức về Network Programming, Java và JavaScript</p>
+    </section>
+
+    <section class="topics">
+        <h2>Chủ đề</h2>
+        <div class="topic-grid">
+            <div class="topic-card">
+                <h3>☕ Java</h3>
+                <p>Lập trình hướng đối tượng, Collections, và nhiều hơn nữa</p>
+                <a href="/categories/java/" class="topic-link">Xem bài viết →</a>
+            </div>
+            <div class="topic-card">
+                <h3>🟨 JavaScript</h3>
+                <p>DOM manipulation, Async programming, và các kỹ thuật hiện đại</p>
+                <a href="/categories/javascript/" class="topic-link">Xem bài viết →</a>
+            </div>
+            <div class="topic-card">
+                <h3>🌐 Mạng máy tính</h3>
+                <p>Mô hình OSI, địa chỉ IP, và lập trình mạng cơ bản</p>
+                <a href="/categories/mạng-máy-tính/" class="topic-link">Xem bài viết →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="recent-posts">
+        <h2>Bài viết mới nhất</h2>
+        <div class="posts-list">
+            {{ range first 6 (where .Site.RegularPages "Type" "blog") }}
+            <article class="post-card">
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <div class="post-meta">
+                    <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+                    {{ with .Params.categories }}
+                    <span class="categories">
+                        {{ range . }}
+                        <a href="/categories/{{ . | urlize }}/" class="category">{{ . }}</a>
+                        {{ end }}
+                    </span>
+                    {{ end }}
+                </div>
+                {{ if .Summary }}
+                <p class="post-summary">{{ .Summary | truncate 150 }}</p>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+        <div class="view-all">
+            <a href="/blog/" class="btn-primary">Xem tất cả bài viết →</a>
+        </div>
+    </section>
+</div>
+{{ end }}

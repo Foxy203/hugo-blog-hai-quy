@@ -1,0 +1,66 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<div class="list-page">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Description }}
+        <p class="page-description">{{ . }}</p>
+        {{ end }}
+    </header>
+
+    <div class="posts-grid">
+        {{ range .Pages }}
+        <article class="post-card">
+            <h2 class="post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format " 2006-01-02" }}">
+                    📅 {{ .Date.Format "02/01/2006" }}
+                </time>
+
+                {{ with .Params.categories }}
+                <span class="categories">
+                    {{ range . }}
+                    <a href="/categories/{{ . | urlize }}/" class="category-tag">{{ . }}</a>
+                    {{ end }}
+                </span>
+                {{ end }}
+
+                {{ with .Params.tags }}
+                <div class="tags">
+                    {{ range . }}
+                    <a href="/tags/{{ . | urlize }}/" class="tag">#{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+
+            {{ if .Summary }}
+            <p class="post-excerpt">{{ .Summary | truncate 200 }}</p>
+            {{ end }}
+
+            <a href="{{ .Permalink }}" class="read-more">Đọc tiếp →</a>
+        </article>
+        {{ end }}
+    </div>
+
+    {{ if gt .Paginator.TotalPages 1 }}
+    <nav class="pagination">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" class="pagination-link">← Trang trước</a>
+        {{ end }}
+
+        <span class="pagination-info">
+            Trang {{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}
+        </span>
+
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" class="pagination-link">Trang sau →</a>
+        {{ end }}
+    </nav>
+    {{ end }}
+</div>
+{{ end }}

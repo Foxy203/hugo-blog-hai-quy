@@ -1,0 +1,53 @@
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+
+{{ define "main" }}
+<article class="single-post">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+
+        <div class="post-metadata">
+            <time datetime="{{ .Date.Format " 2006-01-02" }}" class="post-date">
+                📅 {{ .Date.Format "02 tháng 01, 2006" }}
+            </time>
+
+            {{ with .Params.categories }}
+            <div class="post-categories">
+                {{ range . }}
+                <a href="/categories/{{ . | urlize }}/" class="category-badge">{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+
+            {{ with .Params.tags }}
+            <div class="post-tags">
+                {{ range . }}
+                <a href="/tags/{{ . | urlize }}/" class="tag-badge">#{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+
+    <footer class="post-footer">
+        <div class="post-navigation">
+            {{ with .PrevInSection }}
+            <div class="nav-prev">
+                <span class="nav-label">← Bài trước</span>
+                <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
+            </div>
+            {{ end }}
+
+            {{ with .NextInSection }}
+            <div class="nav-next">
+                <span class="nav-label">Bài sau →</span>
+                <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
+            </div>
+            {{ end }}
+        </div>
+    </footer>
+</article>
+{{ end }}

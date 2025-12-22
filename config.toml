@@ -1,0 +1,45 @@
+title = "Blog Hải Quý Onii-chan"
+baseURL = "http://example.com/"
+languageCode = "vi"
+theme = "simple"
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "Blog về Network Programming, Java và JavaScript"
+  author = "Hải Quý Onii-chan"
+  darkModeEnabled = true
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = "monokai"
+    tabWidth = 4
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    name = "Profile"
+    url = "/profile/"
+    weight = 3
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
