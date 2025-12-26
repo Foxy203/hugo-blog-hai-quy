@@ -7,7 +7,7 @@
     <meta name="generator" content="{{ hugo.Generator }}">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Blog L?p Trình</title>
-    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="{{ " css/custom.css" | relURL }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
     </div>
     {{ partial "footer.html" . }}
     <a href="#" class="scroll-to-top"></a>
-    <script src="/js/main.js"></script>
+    <script src="{{ " js/main.js" | relURL }}"></script>
 </body>
 
 </html>
