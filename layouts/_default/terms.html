@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="container">
+    <h1 style="margin-bottom: 30px;">{{ .Title }}</h1>
+
+    <div class="tag-cloud" style="display: flex; flex-wrap: wrap; gap: 15px;">
+        {{ range .Data.Terms }}
+        <a href="{{ .Page.Permalink }}" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background: #fff;
+            border: 1px solid #eaeaea;
+            color: #002044;
+            text-decoration: none;
+            border-radius: 4px;
+        ">
+            {{ .Page.Title }} <strong>({{ .Count }})</strong>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

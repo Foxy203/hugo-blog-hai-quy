@@ -1,0 +1,31 @@
+<header id="site-header">
+    <div class="header-container">
+        <div class="site-branding">
+            <h1>
+                <a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title }}</a>
+            </h1>
+        </div>
+
+        <!-- Search in Center -->
+        <div class="search-toggle">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <nav id="navigation">
+            <ul class="nav" id="main-nav">
+                {{ range .Site.Menus.main }}
+                <li class="{{ if .HasChildren }}has-dropdown{{ end }}">
+                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    {{ if .HasChildren }}
+                    <ul class="dropdown">
+                        {{ range .Children }}
+                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                    {{ end }}
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>

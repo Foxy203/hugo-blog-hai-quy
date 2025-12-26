@@ -1,30 +1,31 @@
-title = "Blog Hải Quý Onii-chan"
-baseURL = "http://example.com/"
+baseURL = "/"
 languageCode = "vi"
-theme = "simple"
-enableRobotsTXT = true
-
-[pagination]
-  pagerSize = 10
+title = "Blog Lập Trình"
 
 [params]
-  description = "Blog về Network Programming, Java và JavaScript"
-  author = "Hải Quý Onii-chan"
-  darkModeEnabled = true
-
-[markup]
-  [markup.highlight]
-    anchorLineNos = false
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineAnchors = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = true
-    noClasses = false
-    style = "monokai"
-    tabWidth = 4
+  description = "Chia sẻ kiến thức về Java và JavaScript"
+  author = "Hải Quý"
+  
+  [params.colors]
+    primary = "#002044"
+    accent = "#ff7760"
+    highlight = "#9de2ea"
+    background = "#f9f9f9"
+  
+  [params.typography]
+    body_font = "Poppins, -apple-system, sans-serif"
+    heading_font = "Poppins, sans-serif"
+  
+  [params.header]
+    layout = "sticky"
+    height = "80px"
+    logo_text = "HaiQuy.Tech"
+  
+  [params.social]
+    email = "quysun2356@gmail.com"
+    facebook = "https://www.facebook.com/HaiQuyThatTha24092003"
+    tiktok = "https://www.tiktok.com/@boiboi_249"
+    youtube = "https://www.youtube.com/@haiquythattha12a97"
 
 [menu]
   [[menu.main]]
@@ -32,14 +33,27 @@ enableRobotsTXT = true
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
+    name = "Java"
+    url = "/categories/java/"
     weight = 2
   [[menu.main]]
-    name = "Profile"
-    url = "/profile/"
+    name = "JavaScript"
+    url = "/categories/javascript/"
     weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
 
-[taxonomies]
-  category = "categories"
-  tag = "tags"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true

@@ -1,0 +1,79 @@
+﻿<div class="sidebar-wrapper">
+    <!-- About Widget - Matching reference image -->
+    <div class="sidebar-widget about-widget">
+        <h2 class="widget-title">Về Bé Qíu</h2>
+        <div class="about-content">
+            <img src="/images/profile.jpg" alt="{{ .Site.Params.author }}" class="profile-image">
+            <p class="bio-text">{{ .Site.Params.description }}</p>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                {{ with .Site.Params.social.email }}
+                <a href="mailto:{{ . }}" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                {{ end }}
+                {{ with .Site.Params.social.facebook }}
+                <a href="{{ . }}" title="Facebook" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                {{ end }}
+                {{ with .Site.Params.social.tiktok }}
+                <a href="{{ . }}" title="TikTok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                {{ end }}
+                {{ with .Site.Params.social.youtube }}
+                <a href="{{ . }}" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Subscription -->
+    <div class="sidebar-widget subscribe-widget">
+        <h2 class="widget-title">THEO DÕI BÀI VIẾT MỚI</h2>
+        <form class="subscribe-form" action="#" method="post">
+            <input type="email" placeholder="Địa chỉ email" required>
+            <button type="submit">GỬI</button>
+        </form>
+    </div>
+
+    <!-- Recent Posts -->
+    <div class="sidebar-widget">
+        <h2 class="widget-title">BÀI VIẾT GẦN ĐÂY</h2>
+        <ul class="recent-posts">
+            {{ range first 5 .Site.RegularPages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <!-- Categories -->
+    <div class="sidebar-widget">
+        <h2 class="widget-title">DANH MỤC</h2>
+        <ul class="category-list">
+            {{ range .Site.Taxonomies.categories }}
+            <li>
+                <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+                <span class="count">({{ .Count }})</span>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    <!-- Tags Cloud -->
+    <div class="sidebar-widget">
+        <h2 class="widget-title">TAGS</h2>
+        <div class="tag-cloud">
+            {{ range .Site.Taxonomies.tags }}
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+            {{ end }}
+        </div>
+    </div>
+</div>

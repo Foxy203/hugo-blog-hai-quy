@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="mag_block_3">
+
+    <h2 style="margin-bottom: 30px; border-bottom: 2px solid var(--border-gray); padding-bottom: 15px;">
+        {{ .Title }}
+    </h2>
+
+    <div class="blog-grid">
+        {{ range .Paginator.Pages }}
+        <div class="post-card">
+            {{ if .Params.image }}
+            <div style="height: 200px; overflow: hidden;">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ .Params.image }}" style="width: 100%; height: 100%; object-fit: cover;"
+                        alt="{{ .Title }}">
+                </a>
+            </div>
+            {{ end }}
+
+            <div style="padding: 20px;">
+                <p style="font-size: 12px; color: #888; margin-bottom: 10px;">{{ .Date.Format "02 Jan 2006" }}</p>
+                <h3 style="font-size: 18px; margin: 0 0 10px 0;">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <p style="font-size: 14px; color: #555;">{{ .Summary | truncate 120 }}</p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <!-- Pagination -->
+    {{ template "_internal/pagination.html" . }}
+
+</div>
+{{ end }}

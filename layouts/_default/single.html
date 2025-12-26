@@ -1,0 +1,35 @@
+{{ define "main" }}
+<article class="post-single">
+    <header class="post-header" style="margin-bottom: 30px;">
+        <div class="meta" style="font-size: 14px; color: #666; margin-bottom: 10px;">
+            <span>{{ .Date.Format "02 January 2006" }}</span>
+            {{ with .Params.categories }}
+            <span style="margin: 0 10px;">•</span>
+            <span>{{ delimit . ", " }}</span>
+            {{ end }}
+        </div>
+
+        <h1 style="font-size: 36px; margin-bottom: 20px;">{{ .Title }}</h1>
+
+        {{ with .Params.tags }}
+        <div class="tags" style="margin-bottom: 20px;">
+            {{ range . }}
+            <a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#{{
+                . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+
+    {{ if .Params.image }}
+    <div class="featured-image" style="margin-bottom: 40px;">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" style="width: 100%; height: auto; border-radius: 4px;">
+    </div>
+    {{ end }}
+
+    <div class="post-content" style="font-size: 18px; line-height: 1.8;">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}

@@ -1,0 +1,73 @@
+{{ define "main" }}
+<div class="mag_block mag_block_3">
+
+    <!-- Featured/Sticky Posts -->
+    {{ $featured := where .Site.RegularPages "Params.featured" true }}
+    {{ if eq (len $featured) 0 }}
+    {{ $featured = first 3 .Site.RegularPages }}
+    {{ end }}
+
+    {{ range $featured }}
+    <div class="item mag3_post {{ if .Params.featured }}sticky{{ end }}">
+        <div class="entryhead">
+            <div class="imgwrap">
+                <a href="{{ .Permalink }}">
+                    {{ $image := .Params.image | default "https://placehold.co/437x400/f0f0f0/999?text=Image" }}
+                    <img src="{{ $image }}" alt="{{ .Title }}" class="standard grayscale">
+                </a>
+            </div>
+        </div>
+
+        <div class="item_inn">
+            <p class="meta meta_deko">
+                <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
+                <span class="divider">•</span>
+                {{ with .Params.categories }}
+                <span class="categs">
+                    {{ range first 1 . }}
+                    <a href="{{ " /categories/" | relLangURL }}{{ . | urlize }}">{{ upper . }}</a>
+                    {{ end }}
+                </span>
+                {{ end }}
+            </p>
+
+            <h2 class="posttitle">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+
+            <div class="teaser">
+                <p>{{ .Summary | truncate 200 }}</p>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+
+    <!-- Regular Posts Grid -->
+    <h3 class="section-title">BÀI VIẾT KHÁC</h3>
+
+    <div class="blog-grid">
+        {{ range after 3 .Site.RegularPages }}
+        <div class="post-card">
+            {{ if .Params.image }}
+            <div class="card-image">
+                <a href="{{ .Permalink }}">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                </a>
+            </div>
+            {{ end }}
+
+            <div class="card-content">
+                <p class="meta">
+                    <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
+                </p>
+                <h3 class="card-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <p class="card-excerpt">{{ .Summary | truncate 120 }}</p>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+</div>
+{{ end }}

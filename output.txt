@@ -1,0 +1,5 @@
+Start building sites … 
+hugo v0.152.2-6abdacad3f3fe944ea42177844469139e81feda6+extended windows/amd64 BuildDate=2025-10-24T15:31:49Z VendorInfo=gohugoio
+
+Total in 20 ms
+Error: error building site: render: failed to render pages: render of "D:/Download/hugo-blog-hai-quy/content/blog/network/dia-chi-ip-subnet.md" failed: "D:\Download\hugo-blog-hai-quy\layouts\_default\baseof.html:18:12": execute of template failed: template: single.html:18:12: executing "single.html" at <.Hugo.Generator>: can't evaluate field Hugo in type *hugolib.pageState

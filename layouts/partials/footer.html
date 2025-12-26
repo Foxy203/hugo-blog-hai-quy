@@ -1,0 +1,33 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-social">
+                    {{ with .Site.Params.social.email }}
+                    <a href="mailto:{{ . }}" title="Email"><i class="fas fa-envelope"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.social.facebook }}
+                    <a href="{{ . }}" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.social.tiktok }}
+                    <a href="{{ . }}" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    {{ end }}
+                    {{ with .Site.Params.social.youtube }}
+                    <a href="{{ . }}" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    {{ end }}
+                </div>
+                <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+                <p class="powered-by">Powered by Hugo</p>
+            </div>
+        </div>
+    </div>
+</footer>
