@@ -4,7 +4,10 @@ title = "Blog Lập Trình"
 
 [params]
   description = "Chia sẻ kiến thức về Java và JavaScript"
-  author = "Hải Quý"
+  
+  [params.author]
+    name = "Hải Quý"
+    email = "quysun2356@gmail.com"
   
   [params.colors]
     primary = "#002044"
