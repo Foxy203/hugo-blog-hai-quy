@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tương Tác on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/t%C6%B0%C6%A1ng-t%C3%A1c/</link>
+    <description>Recent content in Tương Tác on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 14 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%C6%B0%C6%A1ng-t%C3%A1c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript: Truy cập và thay đổi DOM</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/dom-javascript/</link>
+      <pubDate>Sun, 14 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/dom-javascript/</guid>
+      <description>&lt;p&gt;DOM (Document Object Model) là cấu trúc dữ liệu đại diện cho các phần tử trên trang web. JavaScript cho phép ta tương tác và thay đổi nội dung của trang thông qua đối tượng DOM. Ví dụ dưới đây sẽ minh họa cách truy cập một thẻ HTML có &lt;code&gt;id&lt;/code&gt; và thay đổi nội dung của nó. Kết quả sẽ là nội dung ban đầu của trang được cập nhật bởi JavaScript.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

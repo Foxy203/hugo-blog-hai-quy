@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exception Patterns on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-patterns/</link>
+    <description>Recent content in Exception Patterns on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-patterns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advanced Exception Handling Patterns: Resilience &amp; Reliability</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Thiết kế xử lý lỗi bền vững: logging, retry, fallback, propagation &amp;amp; patterns nâng cao&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-tại-sao-phải-thiết-kế-exception-handling-chuyên-nghiệp&#34;&gt;🧠 1. Tại sao phải thiết kế Exception Handling chuyên nghiệp?&lt;/h2&gt;&#xA;&lt;p&gt;Exception không chỉ là “bắt và in ra console”. Trong ứng dụng thực tế — đặc biệt ứng dụng backend, distributed systems hoặc microservices — bạn cần:&lt;/p&gt;&#xA;&lt;p&gt;✔ &lt;strong&gt;Log có ngữ cảnh đầy đủ&lt;/strong&gt; để debug nhanh.&#xA;✔ &lt;strong&gt;Không nuốt lỗi vô nghĩa&lt;/strong&gt;.&#xA;✔ &lt;strong&gt;Retry logic&lt;/strong&gt; cho lỗi tạm thời (transient failure).&#xA;✔ &lt;strong&gt;Fallback&lt;/strong&gt; để giữ hệ thống hoạt động với degraded behavior.&#xA;✔ &lt;strong&gt;Exception chaining&lt;/strong&gt; để giữ nguyên nhân gốc của lỗi.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

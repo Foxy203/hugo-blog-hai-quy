@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/categories/tools/</link>
+    <description>Recent content in Tools on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Flow &amp; Version Control: Quy trình làm việc nhóm chuyên nghiệp</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Quy trình làm việc với Git chuyên nghiệp cho dự án Frontend/Fullstack/Backend&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Trong lập trình chuyên nghiệp, &lt;strong&gt;Version Control System (VCS)&lt;/strong&gt; — đặc biệt là &lt;strong&gt;Git&lt;/strong&gt; — là kỹ năng không thể thiếu. Git cho phép bạn:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Lưu lịch sử thay đổi mã nguồn (History).&lt;/li&gt;&#xA;&lt;li&gt;Làm việc nhóm hiệu quả (Collaboration).&lt;/li&gt;&#xA;&lt;li&gt;Theo dõi lỗi/cải tiến dễ dàng.&lt;/li&gt;&#xA;&lt;li&gt;Hỗ trợ CI/CD và deployment tự động.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Tuy nhiên, chỉ biết vài lệnh Git cơ bản thôi là chưa đủ — bạn cần nắm &lt;strong&gt;workflow (quy trình làm việc)&lt;/strong&gt; đúng chuẩn để tránh “conflict”, giữ &lt;em&gt;main branch&lt;/em&gt; luôn ổn định.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

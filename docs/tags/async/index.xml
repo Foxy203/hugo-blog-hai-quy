@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Async on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/async/</link>
+    <description>Recent content in Async on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Thu, 02 Jan 2025 09:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/async/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript Bất đồng bộ: Từ Callback Hell đến Async/Await</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-async-await/</link>
+      <pubDate>Thu, 02 Jan 2025 09:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-async-await/</guid>
+      <description>&lt;p&gt;JavaScript là ngôn ngữ &lt;strong&gt;đơn luồng (single-threaded)&lt;/strong&gt;. Điều này có nghĩa là nó chỉ có thể làm một việc tại một thời điểm. Vậy làm thế nào để nó xử lý hàng ngàn request mạng, đọc file, và tương tác với người dùng cùng lúc mà không bị &amp;ldquo;đơ&amp;rdquo;?&lt;/p&gt;&#xA;&lt;p&gt;Câu trả lời nằm ở &lt;strong&gt;Asynchronous Programming&lt;/strong&gt; (Lập trình bất đồng bộ).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/js-async.png&#34; alt=&#34;JS Async&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-vấn-đề-callback-hell-&#34;&gt;1. Vấn đề: Callback Hell 😈&lt;/h2&gt;&#xA;&lt;p&gt;Ngày xửa ngày xưa, chúng ta xử lý bất đồng bộ bằng callback. Và khi các tác vụ phụ thuộc lẫn nhau, ta có thảm họa này:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

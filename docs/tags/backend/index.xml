@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/backend/</link>
+    <description>Recent content in Backend on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 05 Jan 2025 14:20:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RESTful API là gì? Tư duy thiết kế API chuẩn cho Backend Developer</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/rest-api-design/</link>
+      <pubDate>Sun, 05 Jan 2025 14:20:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/rest-api-design/</guid>
+      <description>&lt;p&gt;Trong thế giới microservices và frontend frameworks (React/Vue) hiện nay, API đóng vai trò mạch máu 🩸 kết nối mọi thứ. REST (Representational State Transfer) là tiêu chuẩn phổ biến nhất, nhưng nhiều người vẫn đang thiết kế API&amp;hellip; sai bét.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/rest-api.png&#34; alt=&#34;REST API Architecture&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-resource-oriented-design-tư-duy-hướng-tài-nguyên&#34;&gt;1. Resource-Oriented Design (Tư duy hướng tài nguyên)&lt;/h2&gt;&#xA;&lt;p&gt;Sai lầm phổ biến nhất là đặt URL theo hành động (Action-based).&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;Sai:&lt;/strong&gt; &lt;code&gt;/getAllUsers&lt;/code&gt;, &lt;code&gt;/createUser&lt;/code&gt;, &lt;code&gt;/deleteUser?id=1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Đúng:&lt;/strong&gt; &lt;code&gt;GET /users&lt;/code&gt;, &lt;code&gt;POST /users&lt;/code&gt;, &lt;code&gt;DELETE /users/1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Trong REST, URL định danh &lt;strong&gt;Tài nguyên (Noun)&lt;/strong&gt;, còn &lt;strong&gt;HTTP Method (Verb)&lt;/strong&gt; định danh hành động.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Giải mã Spring Boot Auto Configuration: Ma thuật đằng sau @SpringBootApplication</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/spring-boot-autoconfig/</link>
+      <pubDate>Fri, 03 Jan 2025 10:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/spring-boot-autoconfig/</guid>
+      <description>&lt;p&gt;Nếu bạn đã từng code Spring MVC thời kỳ đầu (XML configuration hell), bạn sẽ thấy Spring Boot như một phép màu. Chỉ cần thêm dependency &lt;code&gt;spring-boot-starter-web&lt;/code&gt;, bùm! Bạn có ngay một Tomcat server chạy ở port 8080.&lt;/p&gt;&#xA;&lt;p&gt;Nhưng&amp;hellip; tại sao? Spring Boot có đọc suy nghĩ của bạn không? 🤔&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/springboot-autoconfig.png&#34; alt=&#34;Spring Boot Auto Config&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-bản-chất-của-ma-thuật&#34;&gt;1. Bản chất của &amp;ldquo;Ma thuật&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Thực ra không có ma thuật nào cả. Tất cả nằm ở &lt;strong&gt;Auto Configuration&lt;/strong&gt;. Spring Boot tự động scan các file &lt;code&gt;.jar&lt;/code&gt; trong classpath của bạn và đoán cấu hình bạn có thể cần.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArrayList on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/arraylist/</link>
+    <description>Recent content in ArrayList on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Fri, 12 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/arraylist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java: Danh sách (ArrayList) cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/danh-sach-arraylist-co-ban/</link>
+      <pubDate>Fri, 12 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/danh-sach-arraylist-co-ban/</guid>
+      <description>&lt;p&gt;Trong Java, &lt;code&gt;ArrayList&lt;/code&gt; là một lớp trong thư viện chuẩn giúp lưu trữ danh sách các phần tử có thể thay đổi kích thước. Khác với mảng cố định, ArrayList có khả năng tự động điều chỉnh kích thước khi thêm hoặc xóa phần tử. Ví dụ dưới đây sẽ minh họa cách sử dụng &lt;code&gt;ArrayList&lt;/code&gt; để thêm và duyệt qua các phần tử số nguyên. Điều này giúp hiểu cơ chế quản lý danh sách trong Java.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

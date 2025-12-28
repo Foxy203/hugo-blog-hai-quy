@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    <title>Giải mã Spring Boot Auto Configuration: Ma thuật đằng sau @SpringBootApplication - Blog Lập Trình</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="../../css/custom.css">
+</head>
+
+<body>
+
+    
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">&times;</button>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..." autofocus>
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    
+    <header id="site-header">
+    <div class="header-container">
+        <div class="site-branding">
+            <h1>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/" rel="home">Blog Lập Trình</a>
+            </h1>
+        </div>
+
+        
+        <div class="search-toggle">
+            <i class="fas fa-search"></i>
+            <span>Tìm kiếm...</span>
+        </div>
+
+        
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <nav id="navigation">
+            <ul class="nav" id="main-nav">
+                <li><a href="../../">Home</a></li>
+
+                
+                <li class="has-dropdown categories-dropdown">
+                    <button class="dropdown-toggle">
+                        Categories
+                        <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../categories/architecture/">
+                                Architecture
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/backend/">
+                                Backend
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/best-practices/">
+                                Best practices
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/devops/">
+                                Devops
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/engineering/">
+                                Engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/frontend/">
+                                Frontend
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/java/">
+                                Java
+                                <span class="post-count">(7)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/javascript/">
+                                Javascript
+                                <span class="post-count">(6)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">
+                                Mạng máy tính
+                                <span class="post-count">(3)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/networking/">
+                                Networking
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/software-engineering/">
+                                Software engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/spring-boot/">
+                                Spring boot
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/tools/">
+                                Tools
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li><a href="../../about/">About</a></li>
+                <li><a href="../../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    
+    <div class="wrapper">
+        
+        <div class="centered-container">
+            
+            <div class="main-layout-container">
+
+                <main id="content">
+                    
+<article class="post-single">
+    <header class="post-header" style="margin-bottom: 30px;">
+        <div class="meta" style="font-size: 14px; color: #666; margin-bottom: 10px;">
+            <span>03 January 2025</span>
+            
+            <span style="margin: 0 10px;">•</span>
+            <span>Spring Boot</span>
+            
+        </div>
+
+        <h1 style="font-size: 36px; margin-bottom: 20px;">Giải mã Spring Boot Auto Configuration: Ma thuật đằng sau @SpringBootApplication</h1>
+
+        
+        <div class="tags" style="margin-bottom: 20px;">
+            
+            <a href="../../%20/tags/backend"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Backend</a>
+            
+            <a href="../../%20/tags/java"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Java</a>
+            
+            <a href="../../%20/tags/framework"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Framework</a>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="featured-image" style="margin-bottom: 40px;">
+        <img src="../../images/custom/spring-boot-autoconfig.png" alt="Giải mã Spring Boot Auto Configuration: Ma thuật đằng sau @SpringBootApplication" style="width: 100%; height: auto; border-radius: 4px;">
+    </div>
+    
+
+    <div class="post-content" style="font-size: 18px; line-height: 1.8;">
+        <p>Nếu bạn đã từng code Spring MVC thời kỳ đầu (XML configuration hell), bạn sẽ thấy Spring Boot như một phép màu. Chỉ cần thêm dependency <code>spring-boot-starter-web</code>, bùm! Bạn có ngay một Tomcat server chạy ở port 8080.</p>
+<p>Nhưng&hellip; tại sao? Spring Boot có đọc suy nghĩ của bạn không? 🤔</p>
+<p><img src="../../images/posts/springboot-autoconfig.png" alt="Spring Boot Auto Config"></p>
+<h2 id="1-bản-chất-của-ma-thuật">1. Bản chất của &ldquo;Ma thuật&rdquo;</h2>
+<p>Thực ra không có ma thuật nào cả. Tất cả nằm ở <strong>Auto Configuration</strong>. Spring Boot tự động scan các file <code>.jar</code> trong classpath của bạn và đoán cấu hình bạn có thể cần.</p>
+<p>Cốt lõi nằm ở annotation <code>@EnableAutoConfiguration</code> (thường được bao gồm trong <code>@SpringBootApplication</code>).</p>
+<h2 id="2-conditional-configuration---trái-tim-của-hệ-thống">2. Conditional Configuration - Trái tim của hệ thống</h2>
+<p>Spring Boot sử dụng hàng loạt annotation bắt đầu bằng <code>@Conditional...</code>. Đây là cách nó đưa ra quyết định:</p>
+<ul>
+<li><code>@ConditionalOnClass</code>: Config này chỉ chạy nếu <strong>CÓ</strong> class X trong classpath.</li>
+<li><code>@ConditionalOnMissingBean</code>: Config này chỉ chạy nếu <strong>CHƯA CÓ</strong> bean nào loại này được tạo.</li>
+<li><code>@ConditionalOnProperty</code>: Config này chỉ chạy nếu trong <code>application.properties</code> có dòng cấu hình tương ứng.</li>
+</ul>
+<h3 id="ví-dụ-về-datasource">Ví dụ về Datasource</h3>
+<p>Khi bạn thêm H2 Database vào dependency:</p>
+<ol>
+<li>Spring thấy class <code>org.h2.Driver</code> trong classpath (<code>@ConditionalOnClass</code>).</li>
+<li>Nó kiểm tra xem bạn đã tự tạo Bean <code>DataSource</code> chưa (<code>@ConditionalOnMissingBean</code>).</li>
+<li>Nếu chưa, nó <strong>tự động</strong> tạo một in-memory datasource kết nối tới H2.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@Configuration</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@ConditionalOnClass</span>(DataSource.<span style="color:#a6e22e">class</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DataSourceAutoConfiguration</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Code tạo DataSource bean nằm ở đây</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3-tự-viết-auto-configuration-của-riêng-bạn">3. Tự viết Auto Configuration của riêng bạn?</h2>
+<p>Bạn hoàn toàn có thể! Hãy tưởng tượng bạn viết một thư viện nội bộ cho công ty.</p>
+<ol>
+<li>Tạo class <code>MyServiceAutoConfiguration</code>.</li>
+<li>Thêm các điều kiện <code>@ConditionalOnClass(MyService.class)</code>.</li>
+<li>Đăng ký nó trong file <code>META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports</code> (Spring Boot 2.7+).</li>
+</ol>
+<h2 id="4-lời-khuyên-cho-developer">4. Lời khuyên cho Developer</h2>
+<p>Đừng quá tin vào &ldquo;ma thuật&rdquo; mà không hiểu nó. Khi gặp lỗi (ví dụ: xung đột bean, sai port), việc hiểu Auto Configuration sẽ giúp bạn biết chính xác cần <code>exclude</code> cái gì hay override bean nào.</p>
+<blockquote>
+<p><strong>Debug Tip:</strong> Chạy ứng dụng với cờ <code>--debug</code>. Console sẽ in ra báo cáo <strong>CONDITIONS EVALUATION REPORT</strong>, cho bạn biết config nào được kích hoạt (Positive matches) và cái nào bị bỏ qua (Negative matches). Cực kỳ hữu ích!</p>
+</blockquote>
+
+    </div>
+</article>
+
+                </main>
+
+                <aside id="sidebar">
+                    <div class="sidebar-wrapper">
+    
+    <div class="sidebar-widget about-widget">
+        <h2 class="widget-title">Về Bé Qíu</h2>
+        <div class="about-content">
+            <img src="../../images/profile.jpg" alt="Hải Quý" class="profile-image">
+            <p class="bio-text">Chia sẻ kiến thức về Java và JavaScript</p>
+
+            
+            <div class="social-icons">
+                
+                <a href="mailto:quysun2356@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                
+                <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                
+                
+                <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                
+                
+                <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-widget subscribe-widget">
+        <h2 class="widget-title">THEO DÕI BÀI VIẾT MỚI</h2>
+        <form class="subscribe-form" action="#" method="post">
+            <input type="email" placeholder="Địa chỉ email" required>
+            <button type="submit">GỬI</button>
+        </form>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">BÀI VIẾT GẦN ĐÂY</h2>
+        <ul class="recent-posts">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/">Advanced Exception Handling Patterns: Resilience &amp; Reliability</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/">Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/">Git Flow &amp; Version Control: Quy trình làm việc nhóm chuyên nghiệp</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/">Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/">JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">DANH MỤC</h2>
+        <ul class="category-list">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/architecture/">Architecture</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/backend/">Backend</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/best-practices/">Best Practices</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/devops/">DevOps</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/engineering/">Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/frontend/">Frontend</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/java/">Java</a>
+                <span class="count">(7)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/javascript/">JavaScript</a>
+                <span class="count">(6)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">Mạng Máy Tính</a>
+                <span class="count">(3)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/networking/">Networking</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/software-engineering/">Software Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/spring-boot/">Spring Boot</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/tools/">Tools</a>
+                <span class="count">(1)</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">TAGS</h2>
+        <div class="tag-cloud">
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/api/">API</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/array-methods/">Array Methods</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/arraylist/">ArrayList</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/async/">Async</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/asynchronous/">Asynchronous</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/backend/">Backend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/best-practices/">Best Practices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/b%E1%BA%A5t-%C4%91%E1%BB%93ng-b%E1%BB%99/">Bất Đồng Bộ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/clean-code/">Clean Code</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/console/">Console</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/container/">Container</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/c%C6%A1-b%E1%BA%A3n/">Cơ Bản</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/danh-s%C3%A1ch/">Danh Sách</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/deployment/">Deployment</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dns/">DNS</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/docker/">Docker</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dom/">DOM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/es6/">ES6</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-handling/">Exception Handling</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-patterns/">Exception Patterns</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/framework/">Framework</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/frontend/">Frontend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/functional-programming/">Functional Programming</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/git/">Git</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/html/">HTML</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/http/">HTTP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/interview-questions/">Interview Questions</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/ip/">IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java/">Java</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java-core/">Java Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript/">JavaScript</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript-core/">JavaScript Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/jvm/">JVM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/kh%C3%A1i-ni%E1%BB%87m/">Khái Niệm</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BA%ADp-tr%C3%ACnh/">Lập Trình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BB%9Bp/">Lớp</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/memory-management/">Memory Management</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/microservices/">Microservices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%A1y-t%C3%ADnh/">Máy Tính</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%B4-h%C3%ACnh/">Mô Hình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%E1%BA%A1ng/">Mạng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/oop/">OOP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi/">OSI</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi-model/">OSI Model</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/performance/">Performance</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/promise/">Promise</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/refactoring/">Refactoring</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/resilience/">Resilience</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/security/">Security</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/subnet/">Subnet</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/tcp/ip/">TCP/IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/teamwork/">Teamwork</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%C6%B0%C6%A1ng-t%C3%A1c/">Tương Tác</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%E1%BA%A7ng/">Tầng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/version-control/">Version Control</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/v%C3%AD-d%E1%BB%A5/">Ví Dụ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/web-service/">Web Service</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/workflow/">Workflow</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%8Ba-ch%E1%BB%89/">Địa Chỉ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/">Đối Tượng</a>
+            
+        </div>
+    </div>
+</div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    
+                    <li><a href="../../">Home</a></li>
+                    
+                    <li><a href="../../categories/java/">Java</a></li>
+                    
+                    <li><a href="../../categories/javascript/">JavaScript</a></li>
+                    
+                    <li><a href="../../about/">About</a></li>
+                    
+                    <li><a href="../../contact/">Contact</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-social">
+                    
+                    <a href="mailto:quysun2356@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    
+                    
+                    <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
+                    
+                    <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    
+                    
+                    <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    
+                </div>
+                <p>&copy; 2025 Blog Lập Trình. All rights reserved.</p>
+                <p class="powered-by">Powered by Hugo</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="../../js/search.js"></script>
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>

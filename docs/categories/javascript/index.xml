@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/categories/javascript/</link>
+    <description>Recent content in JavaScript on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;map(), filter(), reduce(), find() — Transform, Filter, Aggregate &amp;amp; Search&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Trong JavaScript hiện đại, xử lý mảng không chỉ là &lt;code&gt;for&lt;/code&gt; hay &lt;code&gt;forEach&lt;/code&gt; — mà còn là những hàm “functional style” giúp code ngắn gọn, rõ mục đích và dễ bảo trì.&lt;/em&gt; Đây là những kỹ năng &lt;strong&gt;phỏng vấn frontend &amp;amp; fullstack cơ bản mà bạn nên nắm thật chắc&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu-array-methods&#34;&gt;🧠 &lt;strong&gt;1. Giới thiệu Array Methods&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript cung cấp một loạt các method dùng để xử lý array theo cách &lt;em&gt;declarative&lt;/em&gt; (mô tả mục đích) thay vì &lt;em&gt;imperative&lt;/em&gt; (làm sao thực hiện). Bốn method bạn nhất định phải biết là:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: The Tricky Parts - Scope, Hoisting &amp; Closure</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-tricky-parts/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-tricky-parts/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Giải thích &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt;, &lt;code&gt;const&lt;/code&gt;, Hoisting, Closure — những câu hỏi phỏng vấn Frontend kinh điển&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript là ngôn ngữ chủ đạo cho web hiện đại. Dù là Frontend hay Fullstack, bạn &lt;em&gt;phải&lt;/em&gt; nắm rõ những khái niệm cơ bản nhưng dễ gây nhầm lẫn sau đây — vì chúng liên quan tới &lt;strong&gt;scope&lt;/strong&gt;, &lt;strong&gt;runtime behavior&lt;/strong&gt; và cách engine JS xử lý mã.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-2-var-let-const--sự-khác-biệt-cơ-bản&#34;&gt;🔹 2. &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt;, &lt;code&gt;const&lt;/code&gt; — Sự khác biệt cơ bản&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-21-phạm-vi-scope&#34;&gt;📌 2.1 Phạm vi (Scope)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;code&gt;var&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: Lập trình bất đồng bộ với Promise</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/async-javascript/</link>
+      <pubDate>Mon, 15 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/async-javascript/</guid>
+      <description>&lt;p&gt;Trong JavaScript, lập trình bất đồng bộ (asynchronous) rất phổ biến, đặc biệt khi thực hiện các tác vụ như gọi API hoặc xử lý sau một khoảng thời gian. &lt;code&gt;Promise&lt;/code&gt; là một đối tượng dùng để xử lý kết quả bất đồng bộ. Ví dụ dưới đây tạo một Promise giả lập lấy dữ liệu sau 1 giây rồi in ra màn hình. Nhờ Promise, ta có thể sử dụng &lt;code&gt;.then&lt;/code&gt; để xử lý kết quả sau khi tác vụ hoàn thành.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: Truy cập và thay đổi DOM</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/dom-javascript/</link>
+      <pubDate>Sun, 14 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/dom-javascript/</guid>
+      <description>&lt;p&gt;DOM (Document Object Model) là cấu trúc dữ liệu đại diện cho các phần tử trên trang web. JavaScript cho phép ta tương tác và thay đổi nội dung của trang thông qua đối tượng DOM. Ví dụ dưới đây sẽ minh họa cách truy cập một thẻ HTML có &lt;code&gt;id&lt;/code&gt; và thay đổi nội dung của nó. Kết quả sẽ là nội dung ban đầu của trang được cập nhật bởi JavaScript.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: Giới thiệu và ví dụ cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</link>
+      <pubDate>Sat, 13 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</guid>
+      <description>&lt;p&gt;JavaScript là ngôn ngữ lập trình phổ biến cho phát triển web, chạy trực tiếp trên trình duyệt. Nó có cú pháp linh hoạt và cho phép tương tác trực tiếp với người dùng hoặc trang web. Ví dụ sau sẽ giới thiệu cách sử dụng lệnh &lt;code&gt;console.log&lt;/code&gt; trong JavaScript để in thông báo ra bảng điều khiển (console). Qua đó, người học sẽ hiểu cách chạy JavaScript trong môi trường trình duyệt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Bất đồng bộ: Từ Callback Hell đến Async/Await</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-async-await/</link>
+      <pubDate>Thu, 02 Jan 2025 09:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-async-await/</guid>
+      <description>&lt;p&gt;JavaScript là ngôn ngữ &lt;strong&gt;đơn luồng (single-threaded)&lt;/strong&gt;. Điều này có nghĩa là nó chỉ có thể làm một việc tại một thời điểm. Vậy làm thế nào để nó xử lý hàng ngàn request mạng, đọc file, và tương tác với người dùng cùng lúc mà không bị &amp;ldquo;đơ&amp;rdquo;?&lt;/p&gt;&#xA;&lt;p&gt;Câu trả lời nằm ở &lt;strong&gt;Asynchronous Programming&lt;/strong&gt; (Lập trình bất đồng bộ).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/js-async.png&#34; alt=&#34;JS Async&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-vấn-đề-callback-hell-&#34;&gt;1. Vấn đề: Callback Hell 😈&lt;/h2&gt;&#xA;&lt;p&gt;Ngày xửa ngày xưa, chúng ta xử lý bất đồng bộ bằng callback. Và khi các tác vụ phụ thuộc lẫn nhau, ta có thảm họa này:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

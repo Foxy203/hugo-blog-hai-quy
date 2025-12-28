@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    <title>JavaScript: The Tricky Parts - Scope, Hoisting &amp; Closure - Blog Lập Trình</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="../../css/custom.css">
+</head>
+
+<body>
+
+    
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">&times;</button>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..." autofocus>
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    
+    <header id="site-header">
+    <div class="header-container">
+        <div class="site-branding">
+            <h1>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/" rel="home">Blog Lập Trình</a>
+            </h1>
+        </div>
+
+        
+        <div class="search-toggle">
+            <i class="fas fa-search"></i>
+            <span>Tìm kiếm...</span>
+        </div>
+
+        
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <nav id="navigation">
+            <ul class="nav" id="main-nav">
+                <li><a href="../../">Home</a></li>
+
+                
+                <li class="has-dropdown categories-dropdown">
+                    <button class="dropdown-toggle">
+                        Categories
+                        <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../categories/architecture/">
+                                Architecture
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/backend/">
+                                Backend
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/best-practices/">
+                                Best practices
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/devops/">
+                                Devops
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/engineering/">
+                                Engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/frontend/">
+                                Frontend
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/java/">
+                                Java
+                                <span class="post-count">(7)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/javascript/">
+                                Javascript
+                                <span class="post-count">(6)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">
+                                Mạng máy tính
+                                <span class="post-count">(3)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/networking/">
+                                Networking
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/software-engineering/">
+                                Software engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/spring-boot/">
+                                Spring boot
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/tools/">
+                                Tools
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li><a href="../../about/">About</a></li>
+                <li><a href="../../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    
+    <div class="wrapper">
+        
+        <div class="centered-container">
+            
+            <div class="main-layout-container">
+
+                <main id="content">
+                    
+<article class="post-single">
+    <header class="post-header" style="margin-bottom: 30px;">
+        <div class="meta" style="font-size: 14px; color: #666; margin-bottom: 10px;">
+            <span>28 December 2025</span>
+            
+            <span style="margin: 0 10px;">•</span>
+            <span>JavaScript, Frontend</span>
+            
+        </div>
+
+        <h1 style="font-size: 36px; margin-bottom: 20px;">JavaScript: The Tricky Parts - Scope, Hoisting &amp; Closure</h1>
+
+        
+        <div class="tags" style="margin-bottom: 20px;">
+            
+            <a href="../../%20/tags/javascript-core"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#JavaScript Core</a>
+            
+            <a href="../../%20/tags/interview-questions"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Interview Questions</a>
+            
+            <a href="../../%20/tags/es6"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#ES6</a>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="featured-image" style="margin-bottom: 40px;">
+        <img src="../../images/posts/es6javascript.jpg" alt="JavaScript: The Tricky Parts - Scope, Hoisting &amp; Closure" style="width: 100%; height: auto; border-radius: 4px;">
+    </div>
+    
+
+    <div class="post-content" style="font-size: 18px; line-height: 1.8;">
+        <p><em>Giải thích <code>var</code>, <code>let</code>, <code>const</code>, Hoisting, Closure — những câu hỏi phỏng vấn Frontend kinh điển</em></p>
+<h2 id="-1-giới-thiệu">🧠 1. Giới thiệu</h2>
+<p>JavaScript là ngôn ngữ chủ đạo cho web hiện đại. Dù là Frontend hay Fullstack, bạn <em>phải</em> nắm rõ những khái niệm cơ bản nhưng dễ gây nhầm lẫn sau đây — vì chúng liên quan tới <strong>scope</strong>, <strong>runtime behavior</strong> và cách engine JS xử lý mã.</p>
+<hr>
+<h2 id="-2-var-let-const--sự-khác-biệt-cơ-bản">🔹 2. <code>var</code>, <code>let</code>, <code>const</code> — Sự khác biệt cơ bản</h2>
+<h3 id="-21-phạm-vi-scope">📌 2.1 Phạm vi (Scope)</h3>
+<ul>
+<li>
+<p><strong><code>var</code></strong>:</p>
+<ul>
+<li>Là <em>function-scoped</em>: chỉ giới hạn trong hàm chứa nó, không phải block <code>{}</code>.</li>
+<li>Có thể bị truy cập <em>ngoài block</em> trong cùng function → dễ gây bug.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>let</code> và <code>const</code></strong>:</p>
+<ul>
+<li>Đều có <em>block scope</em> — chỉ tồn tại trong <code>{}</code> nơi khai báo.</li>
+<li>Đây là cách hiện đại và <em>an toàn hơn</em> vì tránh <strong>leak biến</strong> ngoài block.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ví dụ minh họa:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">true</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hi&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hey&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>); <span style="color:#75715e">// &#34;hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>); <span style="color:#75715e">// ReferenceError
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">c</span>); <span style="color:#75715e">// ReferenceError
+</span></span></span></code></pre></div><p>👉 <strong>Kết luận:</strong> Không nên dùng <code>var</code> nữa trong code hiện đại — hãy ưu tiên <code>const</code>, nếu biến cần <em>thay đổi</em> thì dùng <code>let</code>.</p>
+<hr>
+<h3 id="-22-hoisting--hoạt-động-như-thế-nào">📌 2.2 Hoisting — Hoạt động như thế nào?</h3>
+<p><strong>Hoisting</strong> là cơ chế JavaScript <em>di chuyển các khai báo</em> (variable &amp; function) lên đầu phạm vi của nó trước khi thực thi code. Nhưng <strong>điều này không giống nhau</strong> cho từng kiểu khai báo.</p>
+<ul>
+<li>Với <strong><code>var</code></strong>:
+<ul>
+<li>Biến được hoisted và <strong>được khởi tạo với <code>undefined</code></strong>, nên bạn có thể <em>access</em> trước khi khai báo (trả về <code>undefined</code>).</li>
+</ul>
+</li>
+<li>Với <strong><code>let</code> / <code>const</code></strong>:
+<ul>
+<li>Biến bị hoisted nhưng không khởi tạo → truy cập trước khi khai báo sẽ <strong>ReferenceError</strong> vì bị rơi vào <em>Temporal Dead Zone (TDZ)</em>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Ví dụ:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// undefined (var)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">y</span>); <span style="color:#75715e">// ReferenceError (let/const)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">z</span>); <span style="color:#75715e">// ReferenceError (const)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">z</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><p>👉 Nhờ <strong>TDZ</strong>, JavaScript ngăn lỗi truy cập biến trước khi khai báo — điều này giúp mã an toàn và dễ debug hơn.</p>
+<hr>
+<h2 id="-3-closure--ăn-sâu-fundamental">🔹 3. Closure — Ăn sâu fundamental</h2>
+<p>Closure là một trong những khái niệm <em>khó nhưng cực kỳ quan trọng</em> trong JavaScript — và đây cũng là câu hỏi phỏng vấn rất phổ biến.</p>
+<h3 id="-closure-là-gì">📌 Closure là gì?</h3>
+<blockquote>
+<p><strong>Closure</strong> là khi hàm <em>inner</em> có thể truy cập biến từ hàm <em>outer</em> ngay cả khi outer đã kết thúc thực thi.</p>
+</blockquote>
+<p>Nghĩa là: JavaScript giữ lại <em>scope chain</em> cho inner function, không xóa biến ngoài ngay khi outer function return.</p>
+<h3 id="-ví-dụ-đơn-giản">📌 Ví dụ đơn giản</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createCounter</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">counter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createCounter</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">counter</span>()); <span style="color:#75715e">// 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">counter</span>()); <span style="color:#75715e">// 2
+</span></span></span></code></pre></div><p>Trong ví dụ trên:</p>
+<ul>
+<li>Hàm <code>createCounter</code> trả về một function.</li>
+<li>Function này <strong>vẫn nhớ được biến <code>count</code></strong> dù <code>createCounter()</code> đã kết thúc.</li>
+<li>Closure giữ <em>state</em> — đối với JavaScript, đây là foundation cho <em>modules</em>, <em>encapsulation</em> và <em>private data</em>.</li>
+</ul>
+<hr>
+<h2 id="-4-tại-sao-closure-hữu-ích">🧠 4. Tại sao closure hữu ích?</h2>
+<ul>
+<li><strong>Giữ trạng thái qua các lần gọi</strong></li>
+<li><strong>Khai báo biến private</strong> (thay vì biến global)</li>
+<li><strong>Callback, asynchronous patterns</strong> như event handlers sẽ thường dùng closure.</li>
+</ul>
+<p>👉 Closure là một trong những khái niệm làm nên sự “năng động” của JS.</p>
+<hr>
+<h2 id="-5-kết-luận--best-practices">🧪 5. Kết luận &amp; Best Practices</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Concept</th>
+          <th style="text-align: left">Nên/Không nên</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>var</code></td>
+          <td style="text-align: left">❌ Tránh dùng</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>let</code></td>
+          <td style="text-align: left">✅ Khi cần thay đổi giá trị</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>const</code></td>
+          <td style="text-align: left">✅ Khi giá trị không đổi</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Hoisting</td>
+          <td style="text-align: left">⚠ Biết để tránh lỗi truy cập biến</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Closure</td>
+          <td style="text-align: left">✅ Nắm vững cho phỏng vấn và async</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-tóm-tắt-nhanh">📌 Tóm tắt nhanh</h2>
+<ul>
+<li><strong>Scope</strong> xác định nơi biến tồn tại trong chương trình. (<code>var</code>: function, <code>let/const</code>: block)</li>
+<li><strong>Hoisting</strong> di chuyển khai báo lên đầu scope; <code>var</code> khác với <code>let/const</code> ở cách khởi tạo.</li>
+<li><strong>Closure</strong> cho phép function truy cập <em>environment</em> nơi nó được creation.</li>
+</ul>
+<hr>
+<p><em>Tham khảo các tài liệu chuyên sâu để nắm vững hơn về các concept này trước khi đi phỏng vấn!</em></p>
+
+    </div>
+</article>
+
+                </main>
+
+                <aside id="sidebar">
+                    <div class="sidebar-wrapper">
+    
+    <div class="sidebar-widget about-widget">
+        <h2 class="widget-title">Về Bé Qíu</h2>
+        <div class="about-content">
+            <img src="../../images/profile.jpg" alt="Hải Quý" class="profile-image">
+            <p class="bio-text">Chia sẻ kiến thức về Java và JavaScript</p>
+
+            
+            <div class="social-icons">
+                
+                <a href="mailto:quysun2356@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                
+                <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                
+                
+                <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                
+                
+                <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-widget subscribe-widget">
+        <h2 class="widget-title">THEO DÕI BÀI VIẾT MỚI</h2>
+        <form class="subscribe-form" action="#" method="post">
+            <input type="email" placeholder="Địa chỉ email" required>
+            <button type="submit">GỬI</button>
+        </form>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">BÀI VIẾT GẦN ĐÂY</h2>
+        <ul class="recent-posts">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/">Advanced Exception Handling Patterns: Resilience &amp; Reliability</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/">Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/">Git Flow &amp; Version Control: Quy trình làm việc nhóm chuyên nghiệp</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/">Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/">JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">DANH MỤC</h2>
+        <ul class="category-list">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/architecture/">Architecture</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/backend/">Backend</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/best-practices/">Best Practices</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/devops/">DevOps</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/engineering/">Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/frontend/">Frontend</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/java/">Java</a>
+                <span class="count">(7)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/javascript/">JavaScript</a>
+                <span class="count">(6)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">Mạng Máy Tính</a>
+                <span class="count">(3)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/networking/">Networking</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/software-engineering/">Software Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/spring-boot/">Spring Boot</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/tools/">Tools</a>
+                <span class="count">(1)</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">TAGS</h2>
+        <div class="tag-cloud">
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/api/">API</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/array-methods/">Array Methods</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/arraylist/">ArrayList</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/async/">Async</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/asynchronous/">Asynchronous</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/backend/">Backend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/best-practices/">Best Practices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/b%E1%BA%A5t-%C4%91%E1%BB%93ng-b%E1%BB%99/">Bất Đồng Bộ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/clean-code/">Clean Code</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/console/">Console</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/container/">Container</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/c%C6%A1-b%E1%BA%A3n/">Cơ Bản</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/danh-s%C3%A1ch/">Danh Sách</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/deployment/">Deployment</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dns/">DNS</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/docker/">Docker</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dom/">DOM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/es6/">ES6</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-handling/">Exception Handling</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-patterns/">Exception Patterns</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/framework/">Framework</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/frontend/">Frontend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/functional-programming/">Functional Programming</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/git/">Git</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/html/">HTML</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/http/">HTTP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/interview-questions/">Interview Questions</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/ip/">IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java/">Java</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java-core/">Java Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript/">JavaScript</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript-core/">JavaScript Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/jvm/">JVM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/kh%C3%A1i-ni%E1%BB%87m/">Khái Niệm</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BA%ADp-tr%C3%ACnh/">Lập Trình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BB%9Bp/">Lớp</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/memory-management/">Memory Management</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/microservices/">Microservices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%A1y-t%C3%ADnh/">Máy Tính</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%B4-h%C3%ACnh/">Mô Hình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%E1%BA%A1ng/">Mạng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/oop/">OOP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi/">OSI</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi-model/">OSI Model</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/performance/">Performance</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/promise/">Promise</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/refactoring/">Refactoring</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/resilience/">Resilience</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/security/">Security</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/subnet/">Subnet</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/tcp/ip/">TCP/IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/teamwork/">Teamwork</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%C6%B0%C6%A1ng-t%C3%A1c/">Tương Tác</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%E1%BA%A7ng/">Tầng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/version-control/">Version Control</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/v%C3%AD-d%E1%BB%A5/">Ví Dụ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/web-service/">Web Service</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/workflow/">Workflow</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%8Ba-ch%E1%BB%89/">Địa Chỉ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/">Đối Tượng</a>
+            
+        </div>
+    </div>
+</div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    
+                    <li><a href="../../">Home</a></li>
+                    
+                    <li><a href="../../categories/java/">Java</a></li>
+                    
+                    <li><a href="../../categories/javascript/">JavaScript</a></li>
+                    
+                    <li><a href="../../about/">About</a></li>
+                    
+                    <li><a href="../../contact/">Contact</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-social">
+                    
+                    <a href="mailto:quysun2356@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    
+                    
+                    <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
+                    
+                    <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    
+                    
+                    <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    
+                </div>
+                <p>&copy; 2025 Blog Lập Trình. All rights reserved.</p>
+                <p class="powered-by">Powered by Hugo</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="../../js/search.js"></script>
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>

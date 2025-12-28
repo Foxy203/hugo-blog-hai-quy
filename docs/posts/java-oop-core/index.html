@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    <title>Làm chủ 4 Tính chất của Lập trình Hướng đối tượng (OOP) trong Java - Blog Lập Trình</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="../../css/custom.css">
+</head>
+
+<body>
+
+    
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">&times;</button>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..." autofocus>
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    
+    <header id="site-header">
+    <div class="header-container">
+        <div class="site-branding">
+            <h1>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/" rel="home">Blog Lập Trình</a>
+            </h1>
+        </div>
+
+        
+        <div class="search-toggle">
+            <i class="fas fa-search"></i>
+            <span>Tìm kiếm...</span>
+        </div>
+
+        
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <nav id="navigation">
+            <ul class="nav" id="main-nav">
+                <li><a href="../../">Home</a></li>
+
+                
+                <li class="has-dropdown categories-dropdown">
+                    <button class="dropdown-toggle">
+                        Categories
+                        <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../categories/architecture/">
+                                Architecture
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/backend/">
+                                Backend
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/best-practices/">
+                                Best practices
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/devops/">
+                                Devops
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/engineering/">
+                                Engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/frontend/">
+                                Frontend
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/java/">
+                                Java
+                                <span class="post-count">(7)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/javascript/">
+                                Javascript
+                                <span class="post-count">(6)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">
+                                Mạng máy tính
+                                <span class="post-count">(3)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/networking/">
+                                Networking
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/software-engineering/">
+                                Software engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/spring-boot/">
+                                Spring boot
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/tools/">
+                                Tools
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li><a href="../../about/">About</a></li>
+                <li><a href="../../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    
+    <div class="wrapper">
+        
+        <div class="centered-container">
+            
+            <div class="main-layout-container">
+
+                <main id="content">
+                    
+<article class="post-single">
+    <header class="post-header" style="margin-bottom: 30px;">
+        <div class="meta" style="font-size: 14px; color: #666; margin-bottom: 10px;">
+            <span>01 January 2025</span>
+            
+            <span style="margin: 0 10px;">•</span>
+            <span>Java</span>
+            
+        </div>
+
+        <h1 style="font-size: 36px; margin-bottom: 20px;">Làm chủ 4 Tính chất của Lập trình Hướng đối tượng (OOP) trong Java</h1>
+
+        
+        <div class="tags" style="margin-bottom: 20px;">
+            
+            <a href="../../%20/tags/oop"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#OOP</a>
+            
+            <a href="../../%20/tags/java-core"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Java Core</a>
+            
+            <a href="../../%20/tags/l%E1%BA%ADp-tr%C3%ACnh"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Lập trình</a>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="featured-image" style="margin-bottom: 40px;">
+        <img src="../../images/posts/OOP.jpg" alt="Làm chủ 4 Tính chất của Lập trình Hướng đối tượng (OOP) trong Java" style="width: 100%; height: auto; border-radius: 4px;">
+    </div>
+    
+
+    <div class="post-content" style="font-size: 18px; line-height: 1.8;">
+        <p>Lập trình hướng đối tượng (<strong>OOP</strong>) không chỉ là một mô hình lập trình, nó là &ldquo;tư duy&rdquo; để mô hình hóa thế giới thực vào phần mềm. Là một Java Developer, việc hiểu sâu 4 trụ cột này sẽ phân biệt bạn giữa một &ldquo;coder&rdquo; và một &ldquo;software engineer&rdquo;.</p>
+<p><img src="../../images/posts/java-oop.png" alt="Java OOP Concepts"></p>
+<h2 id="1-tính-đóng-gói-encapsulation---chiếc-hộp-đen-bảo-mật">1. Tính Đóng gói (Encapsulation) - &ldquo;Chiếc hộp đen bảo mật&rdquo;</h2>
+<p>Hãy tưởng tượng một viên thuốc con nhộng 💊. Bạn sử dụng nó để chữa bệnh nhưng không hề biết (và không nên biết) các thành phần hóa học bên trong được trộn như thế nào. Bạn chỉ quan tâm đến lớp vỏ và tác dụng của nó.</p>
+<p>Trong Java, Đóng gói là kỹ thuật <strong>ẩn giấu thông tin</strong> và chi tiết cài đặt của đối tượng.</p>
+<h3 id="tại-sao-cần-đóng-gói">Tại sao cần Đóng gói?</h3>
+<ul>
+<li><strong>Bảo mật dữ liệu:</strong> Ngăn chặn việc truy cập trực tiếp và sửa đổi field trái phép.</li>
+<li><strong>Dễ bảo trì:</strong> Bạn có thể thay đổi logic bên trong method setter mà không ảnh hưởng đến code sử dụng class đó.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BankAccount</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1. Private fields - Dữ liệu được bảo vệ</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> balance; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">BankAccount</span>(<span style="color:#66d9ef">double</span> initialBalance) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (initialBalance <span style="color:#f92672">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">balance</span> <span style="color:#f92672">=</span> initialBalance;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 2. Public method - Cổng giao tiếp kiểm soát</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">deposit</span>(<span style="color:#66d9ef">double</span> amount) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (amount <span style="color:#f92672">&gt;</span> 0) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">balance</span> <span style="color:#f92672">+=</span> amount;
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Đã nạp: &#34;</span> <span style="color:#f92672">+</span> amount);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Số tiền không hợp lệ!&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Getter - Chỉ đọc</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">getBalance</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> balance;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p><strong>Pro Tip:</strong> Luôn sử dụng <code>private</code> cho các biến instance và cung cấp <code>public</code> getter/setter chỉ khi thực sự cần thiết. Đừng tạo getter/setter cho mọi field một cách máy móc!</p>
+</blockquote>
+<hr>
+<h2 id="2-tính-kế-thừa-inheritance---cha-truyền-con-nối">2. Tính Kế thừa (Inheritance) - &ldquo;Cha truyền con nối&rdquo;</h2>
+<p>Kế thừa cho phép một class (con) sở hữu các thuộc tính và phương thức của một class khác (cha). Nó giúp ta tuân thủ nguyên tắc <strong>DRY (Don&rsquo;t Repeat Yourself)</strong>.</p>
+<h3 id="ví-dụ-thực-tế">Ví dụ thực tế</h3>
+<p>Bạn có class <code>Animal</code>. <code>Dog</code> và <code>Cat</code> đều là động vật, chúng đều có thể <code>eat()</code> và <code>sleep()</code>. Thay vì viết lại code này 2 lần, ta dùng kế thừa.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Class Cha</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> String name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">eat</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Đang ăn...&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Class Con</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dog</span> <span style="color:#66d9ef">extends</span> Animal {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bark</span>() {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Gâu gâu!&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="cạm-bẫy-của-kế-thừa">Cạm bẫy của Kế thừa</h3>
+<p>Đừng lạm dụng kế thừa! Nếu bạn thấy mình chỉ kế thừa để &ldquo;tái sử dụng code&rdquo; mà mối quan hệ giữa chúng không phải là &ldquo;IS-A&rdquo; (Là một), hãy cẩn trọng.</p>
+<ul>
+<li><strong>Tốt:</strong> <code>Dog</code> <strong>IS-A</strong> <code>Animal</code>.</li>
+<li><strong>Xấu:</strong> <code>Ostrich</code> (Đà điểu) kế thừa <code>Bird</code> (Chim) nếu class <code>Bird</code> có hàm <code>fly()</code>, vì đà điểu không bay được!</li>
+</ul>
+<hr>
+<h2 id="3-tính-đa-hình-polymorphism---một-tên-gọi-nhiều-hình-thái">3. Tính Đa hình (Polymorphism) - &ldquo;Một tên gọi, nhiều hình thái&rdquo;</h2>
+<p>Đây là tính chất thú vị và mạnh mẽ nhất. Nó cho phép một biến tham chiếu có thể trỏ đến các đối tượng của các class con khác nhau và thực thi phương thức theo cách riêng của từng con.</p>
+<h3 id="polymorphism-trong-hành-động">Polymorphism trong hành động</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Animal myPet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Dog(); <span style="color:#75715e">// Biến kiểu Animal, nhưng chứa đối tượng Dog</span>
+</span></span><span style="display:flex;"><span>myPet.<span style="color:#a6e22e">eat</span>(); <span style="color:#75715e">// Gọi hàm eat()</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>myPet <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cat(); <span style="color:#75715e">// Bây giờ nó là Cat</span>
+</span></span><span style="display:flex;"><span>myPet.<span style="color:#a6e22e">eat</span>(); 
+</span></span></code></pre></div><p>Điều này cực kỳ hữu ích khi bạn muốn viết code tổng quát. Ví dụ, một danh sách <code>List&lt;Animal&gt;</code> có thể chứa cả chó, mèo, gà, và bạn có thể lặp qua danh sách đó và gọi <code>makeSound()</code> mà không cần quan tâm cụ thể nó là con gì.</p>
+<hr>
+<h2 id="4-tính-trừu-tượng-abstraction---bản-thiết-kế-cốt-lõi">4. Tính Trừu tượng (Abstraction) - &ldquo;Bản thiết kế cốt lõi&rdquo;</h2>
+<p>Trừu tượng là việc tập trung vào <strong>đối tượng làm được gì</strong> (what) thay vì <strong>làm như thế nào</strong> (how). Trong Java, ta dùng <code>interface</code> và <code>abstract class</code>.</p>
+<h3 id="abstract-class-vs-interface">Abstract Class vs Interface?</h3>
+<ul>
+<li><strong>Abstract Class:</strong> Dùng khi các class có mối quan hệ chặt chẽ, chia sẻ code chung (fields, non-abstract methods). Ví dụ: <code>Vehicle</code> (Phương tiện).</li>
+<li><strong>Interface:</strong> Dùng để định nghĩa khả năng (capability), hành vi mà các class không liên quan có thể cùng làm. Ví dụ: <code>Flyable</code> (Có thể bay) - Chim bay được, Máy bay cũng bay được.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// Interface định nghĩa &#34;Hợp đồng&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">PaymentProcessor</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">processPayment</span>(<span style="color:#66d9ef">double</span> amount);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Các class thực thi &#34;Hợp đồng&#34; đó</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CreditCardPayment</span> <span style="color:#66d9ef">implements</span> PaymentProcessor {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">processPayment</span>(<span style="color:#66d9ef">double</span> amount) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Thanh toán thẻ: &#34;</span> <span style="color:#f92672">+</span> amount);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MomoPayment</span> <span style="color:#66d9ef">implements</span> PaymentProcessor {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">processPayment</span>(<span style="color:#66d9ef">double</span> amount) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Quét Momo: &#34;</span> <span style="color:#f92672">+</span> amount);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="tổng-kết">Tổng kết</h3>
+<p>4 Tính chất này không đứng độc lập, chúng hòa quyện vào nhau để tạo nên những hệ thống phần mềm linh hoạt, dễ mở rộng và bảo trì. Hãy luyện tập việc <strong>thiết kế</strong> class diagram trước khi bắt tay vào code!</p>
+
+    </div>
+</article>
+
+                </main>
+
+                <aside id="sidebar">
+                    <div class="sidebar-wrapper">
+    
+    <div class="sidebar-widget about-widget">
+        <h2 class="widget-title">Về Bé Qíu</h2>
+        <div class="about-content">
+            <img src="../../images/profile.jpg" alt="Hải Quý" class="profile-image">
+            <p class="bio-text">Chia sẻ kiến thức về Java và JavaScript</p>
+
+            
+            <div class="social-icons">
+                
+                <a href="mailto:quysun2356@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                
+                <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                
+                
+                <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                
+                
+                <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-widget subscribe-widget">
+        <h2 class="widget-title">THEO DÕI BÀI VIẾT MỚI</h2>
+        <form class="subscribe-form" action="#" method="post">
+            <input type="email" placeholder="Địa chỉ email" required>
+            <button type="submit">GỬI</button>
+        </form>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">BÀI VIẾT GẦN ĐÂY</h2>
+        <ul class="recent-posts">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/">Advanced Exception Handling Patterns: Resilience &amp; Reliability</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/">Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/">Git Flow &amp; Version Control: Quy trình làm việc nhóm chuyên nghiệp</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/">Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/">JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">DANH MỤC</h2>
+        <ul class="category-list">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/architecture/">Architecture</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/backend/">Backend</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/best-practices/">Best Practices</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/devops/">DevOps</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/engineering/">Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/frontend/">Frontend</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/java/">Java</a>
+                <span class="count">(7)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/javascript/">JavaScript</a>
+                <span class="count">(6)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">Mạng Máy Tính</a>
+                <span class="count">(3)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/networking/">Networking</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/software-engineering/">Software Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/spring-boot/">Spring Boot</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/tools/">Tools</a>
+                <span class="count">(1)</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">TAGS</h2>
+        <div class="tag-cloud">
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/api/">API</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/array-methods/">Array Methods</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/arraylist/">ArrayList</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/async/">Async</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/asynchronous/">Asynchronous</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/backend/">Backend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/best-practices/">Best Practices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/b%E1%BA%A5t-%C4%91%E1%BB%93ng-b%E1%BB%99/">Bất Đồng Bộ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/clean-code/">Clean Code</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/console/">Console</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/container/">Container</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/c%C6%A1-b%E1%BA%A3n/">Cơ Bản</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/danh-s%C3%A1ch/">Danh Sách</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/deployment/">Deployment</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dns/">DNS</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/docker/">Docker</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dom/">DOM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/es6/">ES6</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-handling/">Exception Handling</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-patterns/">Exception Patterns</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/framework/">Framework</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/frontend/">Frontend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/functional-programming/">Functional Programming</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/git/">Git</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/html/">HTML</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/http/">HTTP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/interview-questions/">Interview Questions</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/ip/">IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java/">Java</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java-core/">Java Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript/">JavaScript</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript-core/">JavaScript Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/jvm/">JVM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/kh%C3%A1i-ni%E1%BB%87m/">Khái Niệm</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BA%ADp-tr%C3%ACnh/">Lập Trình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BB%9Bp/">Lớp</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/memory-management/">Memory Management</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/microservices/">Microservices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%A1y-t%C3%ADnh/">Máy Tính</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%B4-h%C3%ACnh/">Mô Hình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%E1%BA%A1ng/">Mạng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/oop/">OOP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi/">OSI</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi-model/">OSI Model</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/performance/">Performance</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/promise/">Promise</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/refactoring/">Refactoring</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/resilience/">Resilience</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/security/">Security</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/subnet/">Subnet</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/tcp/ip/">TCP/IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/teamwork/">Teamwork</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%C6%B0%C6%A1ng-t%C3%A1c/">Tương Tác</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%E1%BA%A7ng/">Tầng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/version-control/">Version Control</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/v%C3%AD-d%E1%BB%A5/">Ví Dụ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/web-service/">Web Service</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/workflow/">Workflow</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%8Ba-ch%E1%BB%89/">Địa Chỉ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/">Đối Tượng</a>
+            
+        </div>
+    </div>
+</div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    
+                    <li><a href="../../">Home</a></li>
+                    
+                    <li><a href="../../categories/java/">Java</a></li>
+                    
+                    <li><a href="../../categories/javascript/">JavaScript</a></li>
+                    
+                    <li><a href="../../about/">About</a></li>
+                    
+                    <li><a href="../../contact/">Contact</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-social">
+                    
+                    <a href="mailto:quysun2356@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    
+                    
+                    <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
+                    
+                    <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    
+                    
+                    <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    
+                </div>
+                <p>&copy; 2025 Blog Lập Trình. All rights reserved.</p>
+                <p class="powered-by">Powered by Hugo</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="../../js/search.js"></script>
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>

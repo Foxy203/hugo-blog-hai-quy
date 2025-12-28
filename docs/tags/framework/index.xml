@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Framework on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/framework/</link>
+    <description>Recent content in Framework on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Fri, 03 Jan 2025 10:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giải mã Spring Boot Auto Configuration: Ma thuật đằng sau @SpringBootApplication</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/spring-boot-autoconfig/</link>
+      <pubDate>Fri, 03 Jan 2025 10:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/spring-boot-autoconfig/</guid>
+      <description>&lt;p&gt;Nếu bạn đã từng code Spring MVC thời kỳ đầu (XML configuration hell), bạn sẽ thấy Spring Boot như một phép màu. Chỉ cần thêm dependency &lt;code&gt;spring-boot-starter-web&lt;/code&gt;, bùm! Bạn có ngay một Tomcat server chạy ở port 8080.&lt;/p&gt;&#xA;&lt;p&gt;Nhưng&amp;hellip; tại sao? Spring Boot có đọc suy nghĩ của bạn không? 🤔&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/springboot-autoconfig.png&#34; alt=&#34;Spring Boot Auto Config&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-bản-chất-của-ma-thuật&#34;&gt;1. Bản chất của &amp;ldquo;Ma thuật&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Thực ra không có ma thuật nào cả. Tất cả nằm ở &lt;strong&gt;Auto Configuration&lt;/strong&gt;. Spring Boot tự động scan các file &lt;code&gt;.jar&lt;/code&gt; trong classpath của bạn và đoán cấu hình bạn có thể cần.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

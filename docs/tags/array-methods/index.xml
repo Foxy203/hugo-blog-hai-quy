@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Array Methods on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/array-methods/</link>
+    <description>Recent content in Array Methods on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/array-methods/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;map(), filter(), reduce(), find() — Transform, Filter, Aggregate &amp;amp; Search&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Trong JavaScript hiện đại, xử lý mảng không chỉ là &lt;code&gt;for&lt;/code&gt; hay &lt;code&gt;forEach&lt;/code&gt; — mà còn là những hàm “functional style” giúp code ngắn gọn, rõ mục đích và dễ bảo trì.&lt;/em&gt; Đây là những kỹ năng &lt;strong&gt;phỏng vấn frontend &amp;amp; fullstack cơ bản mà bạn nên nắm thật chắc&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu-array-methods&#34;&gt;🧠 &lt;strong&gt;1. Giới thiệu Array Methods&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript cung cấp một loạt các method dùng để xử lý array theo cách &lt;em&gt;declarative&lt;/em&gt; (mô tả mục đích) thay vì &lt;em&gt;imperative&lt;/em&gt; (làm sao thực hiện). Bốn method bạn nhất định phải biết là:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

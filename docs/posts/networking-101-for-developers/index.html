@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    <title>Networking 101: Kiến thức mạng cơ bản dành cho Developer - Blog Lập Trình</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="../../css/custom.css">
+</head>
+
+<body>
+
+    
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">&times;</button>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..." autofocus>
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    
+    <header id="site-header">
+    <div class="header-container">
+        <div class="site-branding">
+            <h1>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/" rel="home">Blog Lập Trình</a>
+            </h1>
+        </div>
+
+        
+        <div class="search-toggle">
+            <i class="fas fa-search"></i>
+            <span>Tìm kiếm...</span>
+        </div>
+
+        
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <nav id="navigation">
+            <ul class="nav" id="main-nav">
+                <li><a href="../../">Home</a></li>
+
+                
+                <li class="has-dropdown categories-dropdown">
+                    <button class="dropdown-toggle">
+                        Categories
+                        <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../categories/architecture/">
+                                Architecture
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/backend/">
+                                Backend
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/best-practices/">
+                                Best practices
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/devops/">
+                                Devops
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/engineering/">
+                                Engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/frontend/">
+                                Frontend
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/java/">
+                                Java
+                                <span class="post-count">(7)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/javascript/">
+                                Javascript
+                                <span class="post-count">(6)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">
+                                Mạng máy tính
+                                <span class="post-count">(3)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/networking/">
+                                Networking
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/software-engineering/">
+                                Software engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/spring-boot/">
+                                Spring boot
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/tools/">
+                                Tools
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li><a href="../../about/">About</a></li>
+                <li><a href="../../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    
+    <div class="wrapper">
+        
+        <div class="centered-container">
+            
+            <div class="main-layout-container">
+
+                <main id="content">
+                    
+<article class="post-single">
+    <header class="post-header" style="margin-bottom: 30px;">
+        <div class="meta" style="font-size: 14px; color: #666; margin-bottom: 10px;">
+            <span>28 December 2025</span>
+            
+            <span style="margin: 0 10px;">•</span>
+            <span>Networking, Engineering</span>
+            
+        </div>
+
+        <h1 style="font-size: 36px; margin-bottom: 20px;">Networking 101: Kiến thức mạng cơ bản dành cho Developer</h1>
+
+        
+        <div class="tags" style="margin-bottom: 20px;">
+            
+            <a href="../../%20/tags/osi-model"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#OSI Model</a>
+            
+            <a href="../../%20/tags/tcp/ip"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#TCP/IP</a>
+            
+            <a href="../../%20/tags/http"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#HTTP</a>
+            
+            <a href="../../%20/tags/dns"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#DNS</a>
+            
+            <a href="../../%20/tags/security"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Security</a>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="featured-image" style="margin-bottom: 40px;">
+        <img src="../../images/custom/network-basics.png" alt="Networking 101: Kiến thức mạng cơ bản dành cho Developer" style="width: 100%; height: auto; border-radius: 4px;">
+    </div>
+    
+
+    <div class="post-content" style="font-size: 18px; line-height: 1.8;">
+        <p><em>Hiểu OSI &amp; TCP/IP, HTTP/HTTPS, DNS, IP/Subnetting để xây dựng và gỡ lỗi ứng dụng hiệu quả</em></p>
+<hr>
+<h2 id="-1-giới-thiệu">🧠 1. Giới thiệu</h2>
+<p>Lập trình web/mobile không chỉ là code — mà còn là <strong>giao tiếp qua mạng</strong>. Khi bạn gọi API, load tài nguyên từ server, hoặc debug lỗi kết nối, kiến thức networking chính là chìa khóa để hiểu điều gì <em>đang xảy ra phía dưới</em>.</p>
+<p>Bài này tập trung vào các khái niệm cơ bản nhưng quan trọng nhất cho developer:
+✔ Mô hình chuẩn OSI &amp; TCP/IP.
+✔ HTTP/HTTPS.
+✔ DNS &amp; cách hoạt động.
+✔ Giao thức TCP &amp; UDP.</p>
+<hr>
+<h2 id="-2-osi--tcpip--khung-lý-thuyết-của-mạng">🧠 2. OSI &amp; TCP/IP — Khung lý thuyết của mạng</h2>
+<h3 id="-mô-hình-osi-7-tầng">📌 Mô hình OSI (7 tầng)</h3>
+<p>OSI là một mô hình giúp tách bạch các lớp trong giao tiếp mạng:</p>
+<ol>
+<li><strong>Physical</strong>: Vật lý (cáp, sóng).</li>
+<li><strong>Data Link</strong>: Liên kết dữ liệu (MAC, switch).</li>
+<li><strong>Network</strong>: Định tuyến (IP, router).</li>
+<li><strong>Transport</strong>: Giao vận (TCP/UDP).</li>
+<li><strong>Session</strong>: Phiên kết nối.</li>
+<li><strong>Presentation</strong>: Mã hóa/định dạng.</li>
+<li><strong>Application</strong>: Ứng dụng (HTTP, DNS, FTP).</li>
+</ol>
+<h3 id="-mô-hình-tcpip-thực-tế">📌 Mô hình TCP/IP (Thực tế)</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tầng TCP/IP</th>
+          <th style="text-align: left">Tương ứng OSI</th>
+          <th style="text-align: left">Giao thức tiêu biểu</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Application</strong></td>
+          <td style="text-align: left">Session + Presentation + Application</td>
+          <td style="text-align: left">HTTP, DNS, SMTP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Transport</strong></td>
+          <td style="text-align: left">Transport</td>
+          <td style="text-align: left">TCP, UDP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Internet</strong></td>
+          <td style="text-align: left">Network</td>
+          <td style="text-align: left">IP, ICMP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Link</strong></td>
+          <td style="text-align: left">Physical + Data Link</td>
+          <td style="text-align: left">Ethernet, Wi-Fi</td>
+      </tr>
+  </tbody>
+</table>
+<p>TCP/IP là mô hình thực tế mà mọi gói tin Internet đều tuân theo.</p>
+<hr>
+<h2 id="-3-http--https--giao-tiếp-web">🧠 3. HTTP &amp; HTTPS — Giao tiếp Web</h2>
+<h3 id="-http-là-gì">📌 HTTP là gì?</h3>
+<p>HTTP (Hypertext Transfer Protocol) là giao thức <em>ứng dụng</em> để duyệt web. Mỗi request chứa: Method (GET/POST&hellip;), URL, Header/Body.</p>
+<p><strong>HTTPS</strong> là HTTP chạy trên lớp bảo mật <strong>TLS/SSL</strong>, giúp mã hóa dữ liệu giữa client và server.</p>
+<blockquote>
+<p><strong>Tip:</strong> Hiểu rõ HTTP Status Code (200, 404, 500) là kỹ năng bắt buộc để debug API.</p>
+</blockquote>
+<hr>
+<h2 id="-4-dns--sổ-địa-chỉ-của-internet">🧠 4. DNS — Sổ địa chỉ của Internet</h2>
+<p><strong>DNS (Domain Name System)</strong> ánh xạ <strong>tên miền</strong> (google.com) sang <strong>địa chỉ IP</strong> (142.250.xxx.xxx) mà máy tính hiểu được.</p>
+<p><strong>Quy trình:</strong></p>
+<ol>
+<li>Client hỏi DNS &ldquo;IP của google.com là gì?&rdquo;.</li>
+<li>DNS trả về IP.</li>
+<li>Client dùng IP đó để kết nối server.</li>
+</ol>
+<hr>
+<h2 id="-5-tcp-vs-udp--tầng-vận-chuyển">🧠 5. TCP vs UDP — Tầng vận chuyển</h2>
+<h3 id="-tcp-transmission-control-protocol">📌 TCP (Transmission Control Protocol)</h3>
+<ul>
+<li><strong>Có kết nối (Connection-oriented)</strong>.</li>
+<li>Đảm bảo độ tin cậy, thứ tự gói tin (gửi lại nếu mất).</li>
+<li>Dùng cho: Web (HTTP), Email, File Transfer.</li>
+</ul>
+<h3 id="-udp-user-datagram-protocol">📌 UDP (User Datagram Protocol)</h3>
+<ul>
+<li><strong>Không kết nối (Connectionless)</strong>.</li>
+<li>Nhanh nhưng không đảm bảo nhận đủ gói tin.</li>
+<li>Dùng cho: Streaming, Gaming, VoIp (chấp nhận mất vài frame nhưng cần nhanh).</li>
+</ul>
+<hr>
+<h2 id="-6-kết-luận">📌 6. Kết luận</h2>
+<p>Networking không chỉ dành cho kỹ sư mạng (Network Engineer). Là một Developer, hiểu về HTTP, DNS và TCP/IP giúp bạn:
+✅ Debug lỗi kết nối API nhanh chóng.
+✅ Tối ưu performance tải trang.
+✅ Hiểu về bảo mật (HTTPS, SSL).</p>
+<p><em>Đừng để Networking là &ldquo;hộp đen&rdquo; ma thuật. Hãy hiểu nó để làm chủ hệ thống của bạn.</em></p>
+
+    </div>
+</article>
+
+                </main>
+
+                <aside id="sidebar">
+                    <div class="sidebar-wrapper">
+    
+    <div class="sidebar-widget about-widget">
+        <h2 class="widget-title">Về Bé Qíu</h2>
+        <div class="about-content">
+            <img src="../../images/profile.jpg" alt="Hải Quý" class="profile-image">
+            <p class="bio-text">Chia sẻ kiến thức về Java và JavaScript</p>
+
+            
+            <div class="social-icons">
+                
+                <a href="mailto:quysun2356@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                
+                <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                
+                
+                <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                
+                
+                <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-widget subscribe-widget">
+        <h2 class="widget-title">THEO DÕI BÀI VIẾT MỚI</h2>
+        <form class="subscribe-form" action="#" method="post">
+            <input type="email" placeholder="Địa chỉ email" required>
+            <button type="submit">GỬI</button>
+        </form>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">BÀI VIẾT GẦN ĐÂY</h2>
+        <ul class="recent-posts">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/">Advanced Exception Handling Patterns: Resilience &amp; Reliability</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/">Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/">Git Flow &amp; Version Control: Quy trình làm việc nhóm chuyên nghiệp</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/">Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/">JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">DANH MỤC</h2>
+        <ul class="category-list">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/architecture/">Architecture</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/backend/">Backend</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/best-practices/">Best Practices</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/devops/">DevOps</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/engineering/">Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/frontend/">Frontend</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/java/">Java</a>
+                <span class="count">(7)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/javascript/">JavaScript</a>
+                <span class="count">(6)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">Mạng Máy Tính</a>
+                <span class="count">(3)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/networking/">Networking</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/software-engineering/">Software Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/spring-boot/">Spring Boot</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/tools/">Tools</a>
+                <span class="count">(1)</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">TAGS</h2>
+        <div class="tag-cloud">
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/api/">API</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/array-methods/">Array Methods</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/arraylist/">ArrayList</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/async/">Async</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/asynchronous/">Asynchronous</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/backend/">Backend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/best-practices/">Best Practices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/b%E1%BA%A5t-%C4%91%E1%BB%93ng-b%E1%BB%99/">Bất Đồng Bộ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/clean-code/">Clean Code</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/console/">Console</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/container/">Container</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/c%C6%A1-b%E1%BA%A3n/">Cơ Bản</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/danh-s%C3%A1ch/">Danh Sách</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/deployment/">Deployment</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dns/">DNS</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/docker/">Docker</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dom/">DOM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/es6/">ES6</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-handling/">Exception Handling</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-patterns/">Exception Patterns</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/framework/">Framework</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/frontend/">Frontend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/functional-programming/">Functional Programming</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/git/">Git</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/html/">HTML</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/http/">HTTP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/interview-questions/">Interview Questions</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/ip/">IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java/">Java</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java-core/">Java Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript/">JavaScript</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript-core/">JavaScript Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/jvm/">JVM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/kh%C3%A1i-ni%E1%BB%87m/">Khái Niệm</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BA%ADp-tr%C3%ACnh/">Lập Trình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BB%9Bp/">Lớp</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/memory-management/">Memory Management</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/microservices/">Microservices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%A1y-t%C3%ADnh/">Máy Tính</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%B4-h%C3%ACnh/">Mô Hình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%E1%BA%A1ng/">Mạng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/oop/">OOP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi/">OSI</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi-model/">OSI Model</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/performance/">Performance</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/promise/">Promise</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/refactoring/">Refactoring</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/resilience/">Resilience</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/security/">Security</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/subnet/">Subnet</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/tcp/ip/">TCP/IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/teamwork/">Teamwork</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%C6%B0%C6%A1ng-t%C3%A1c/">Tương Tác</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%E1%BA%A7ng/">Tầng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/version-control/">Version Control</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/v%C3%AD-d%E1%BB%A5/">Ví Dụ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/web-service/">Web Service</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/workflow/">Workflow</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%8Ba-ch%E1%BB%89/">Địa Chỉ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/">Đối Tượng</a>
+            
+        </div>
+    </div>
+</div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    
+                    <li><a href="../../">Home</a></li>
+                    
+                    <li><a href="../../categories/java/">Java</a></li>
+                    
+                    <li><a href="../../categories/javascript/">JavaScript</a></li>
+                    
+                    <li><a href="../../about/">About</a></li>
+                    
+                    <li><a href="../../contact/">Contact</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-social">
+                    
+                    <a href="mailto:quysun2356@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    
+                    
+                    <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
+                    
+                    <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    
+                    
+                    <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    
+                </div>
+                <p>&copy; 2025 Blog Lập Trình. All rights reserved.</p>
+                <p class="powered-by">Powered by Hugo</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="../../js/search.js"></script>
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>

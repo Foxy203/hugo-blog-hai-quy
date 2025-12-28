@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OOP on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/oop/</link>
+    <description>Recent content in OOP on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Thu, 11 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java: Lập trình hướng đối tượng</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</link>
+      <pubDate>Thu, 11 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</guid>
+      <description>&lt;p&gt;Lập trình hướng đối tượng (OOP) là phương pháp lập trình dựa trên khái niệm lớp (class) và đối tượng (object). Java hỗ trợ OOP mạnh mẽ, cho phép định nghĩa các lớp với thuộc tính và phương thức. Ví dụ dưới đây sẽ minh họa cách tạo lớp đơn giản và sử dụng đối tượng trong Java. Qua đó, người đọc hiểu được cách khai báo thuộc tính và khởi tạo đối tượng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm chủ 4 Tính chất của Lập trình Hướng đối tượng (OOP) trong Java</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-oop-core/</link>
+      <pubDate>Wed, 01 Jan 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-oop-core/</guid>
+      <description>&lt;p&gt;Lập trình hướng đối tượng (&lt;strong&gt;OOP&lt;/strong&gt;) không chỉ là một mô hình lập trình, nó là &amp;ldquo;tư duy&amp;rdquo; để mô hình hóa thế giới thực vào phần mềm. Là một Java Developer, việc hiểu sâu 4 trụ cột này sẽ phân biệt bạn giữa một &amp;ldquo;coder&amp;rdquo; và một &amp;ldquo;software engineer&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/java-oop.png&#34; alt=&#34;Java OOP Concepts&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tính-đóng-gói-encapsulation---chiếc-hộp-đen-bảo-mật&#34;&gt;1. Tính Đóng gói (Encapsulation) - &amp;ldquo;Chiếc hộp đen bảo mật&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Hãy tưởng tượng một viên thuốc con nhộng 💊. Bạn sử dụng nó để chữa bệnh nhưng không hề biết (và không nên biết) các thành phần hóa học bên trong được trộn như thế nào. Bạn chỉ quan tâm đến lớp vỏ và tác dụng của nó.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

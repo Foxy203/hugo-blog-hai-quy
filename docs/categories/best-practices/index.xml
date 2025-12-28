@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Practices on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/categories/best-practices/</link>
+    <description>Recent content in Best Practices on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/categories/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Phân biệt Checked vs Unchecked, khi nào bắt, custom exception và best practice&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Exception (ngoại lệ) là một &lt;strong&gt;tình huống bất thường&lt;/strong&gt; xảy ra trong quá trình thực thi chương trình, làm gián đoạn luồng bình thường của ứng dụng. Java cung cấp cơ chế &lt;strong&gt;Exception Handling&lt;/strong&gt; giúp bạn xử lý các tình huống này một cách rõ ràng, an toàn và tránh crash chương trình.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

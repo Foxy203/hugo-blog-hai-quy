@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript Core on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript-core/</link>
+    <description>Recent content in JavaScript Core on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript-core/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript: The Tricky Parts - Scope, Hoisting &amp; Closure</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-tricky-parts/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-tricky-parts/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Giải thích &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt;, &lt;code&gt;const&lt;/code&gt;, Hoisting, Closure — những câu hỏi phỏng vấn Frontend kinh điển&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript là ngôn ngữ chủ đạo cho web hiện đại. Dù là Frontend hay Fullstack, bạn &lt;em&gt;phải&lt;/em&gt; nắm rõ những khái niệm cơ bản nhưng dễ gây nhầm lẫn sau đây — vì chúng liên quan tới &lt;strong&gt;scope&lt;/strong&gt;, &lt;strong&gt;runtime behavior&lt;/strong&gt; và cách engine JS xử lý mã.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-2-var-let-const--sự-khác-biệt-cơ-bản&#34;&gt;🔹 2. &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt;, &lt;code&gt;const&lt;/code&gt; — Sự khác biệt cơ bản&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-21-phạm-vi-scope&#34;&gt;📌 2.1 Phạm vi (Scope)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;code&gt;var&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

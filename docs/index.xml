@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/</link>
+    <description>Recent content on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advanced Exception Handling Patterns: Resilience &amp; Reliability</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Thiết kế xử lý lỗi bền vững: logging, retry, fallback, propagation &amp;amp; patterns nâng cao&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-tại-sao-phải-thiết-kế-exception-handling-chuyên-nghiệp&#34;&gt;🧠 1. Tại sao phải thiết kế Exception Handling chuyên nghiệp?&lt;/h2&gt;&#xA;&lt;p&gt;Exception không chỉ là “bắt và in ra console”. Trong ứng dụng thực tế — đặc biệt ứng dụng backend, distributed systems hoặc microservices — bạn cần:&lt;/p&gt;&#xA;&lt;p&gt;✔ &lt;strong&gt;Log có ngữ cảnh đầy đủ&lt;/strong&gt; để debug nhanh.&#xA;✔ &lt;strong&gt;Không nuốt lỗi vô nghĩa&lt;/strong&gt;.&#xA;✔ &lt;strong&gt;Retry logic&lt;/strong&gt; cho lỗi tạm thời (transient failure).&#xA;✔ &lt;strong&gt;Fallback&lt;/strong&gt; để giữ hệ thống hoạt động với degraded behavior.&#xA;✔ &lt;strong&gt;Exception chaining&lt;/strong&gt; để giữ nguyên nhân gốc của lỗi.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Phân biệt Checked vs Unchecked, khi nào bắt, custom exception và best practice&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Exception (ngoại lệ) là một &lt;strong&gt;tình huống bất thường&lt;/strong&gt; xảy ra trong quá trình thực thi chương trình, làm gián đoạn luồng bình thường của ứng dụng. Java cung cấp cơ chế &lt;strong&gt;Exception Handling&lt;/strong&gt; giúp bạn xử lý các tình huống này một cách rõ ràng, an toàn và tránh crash chương trình.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Git Flow &amp; Version Control: Quy trình làm việc nhóm chuyên nghiệp</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Quy trình làm việc với Git chuyên nghiệp cho dự án Frontend/Fullstack/Backend&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Trong lập trình chuyên nghiệp, &lt;strong&gt;Version Control System (VCS)&lt;/strong&gt; — đặc biệt là &lt;strong&gt;Git&lt;/strong&gt; — là kỹ năng không thể thiếu. Git cho phép bạn:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Lưu lịch sử thay đổi mã nguồn (History).&lt;/li&gt;&#xA;&lt;li&gt;Làm việc nhóm hiệu quả (Collaboration).&lt;/li&gt;&#xA;&lt;li&gt;Theo dõi lỗi/cải tiến dễ dàng.&lt;/li&gt;&#xA;&lt;li&gt;Hỗ trợ CI/CD và deployment tự động.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Tuy nhiên, chỉ biết vài lệnh Git cơ bản thôi là chưa đủ — bạn cần nắm &lt;strong&gt;workflow (quy trình làm việc)&lt;/strong&gt; đúng chuẩn để tránh “conflict”, giữ &lt;em&gt;main branch&lt;/em&gt; luôn ổn định.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Giải thích chi tiết về JVM, Stack vs Heap, String Pool và lý do &lt;code&gt;String&lt;/code&gt; là immutable&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Java là một ngôn ngữ lập trình hướng đối tượng nổi tiếng với triết lý “&lt;em&gt;viết một lần, chạy mọi nơi&lt;/em&gt;” (Write Once, Run Anywhere). Điều này được thực hiện nhờ vào &lt;strong&gt;Java Virtual Machine – JVM&lt;/strong&gt;: một lớp trừu tượng giữa mã Java và hệ điều hành thực thi.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;map(), filter(), reduce(), find() — Transform, Filter, Aggregate &amp;amp; Search&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Trong JavaScript hiện đại, xử lý mảng không chỉ là &lt;code&gt;for&lt;/code&gt; hay &lt;code&gt;forEach&lt;/code&gt; — mà còn là những hàm “functional style” giúp code ngắn gọn, rõ mục đích và dễ bảo trì.&lt;/em&gt; Đây là những kỹ năng &lt;strong&gt;phỏng vấn frontend &amp;amp; fullstack cơ bản mà bạn nên nắm thật chắc&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu-array-methods&#34;&gt;🧠 &lt;strong&gt;1. Giới thiệu Array Methods&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript cung cấp một loạt các method dùng để xử lý array theo cách &lt;em&gt;declarative&lt;/em&gt; (mô tả mục đích) thay vì &lt;em&gt;imperative&lt;/em&gt; (làm sao thực hiện). Bốn method bạn nhất định phải biết là:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: The Tricky Parts - Scope, Hoisting &amp; Closure</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-tricky-parts/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-tricky-parts/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Giải thích &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt;, &lt;code&gt;const&lt;/code&gt;, Hoisting, Closure — những câu hỏi phỏng vấn Frontend kinh điển&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;JavaScript là ngôn ngữ chủ đạo cho web hiện đại. Dù là Frontend hay Fullstack, bạn &lt;em&gt;phải&lt;/em&gt; nắm rõ những khái niệm cơ bản nhưng dễ gây nhầm lẫn sau đây — vì chúng liên quan tới &lt;strong&gt;scope&lt;/strong&gt;, &lt;strong&gt;runtime behavior&lt;/strong&gt; và cách engine JS xử lý mã.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-2-var-let-const--sự-khác-biệt-cơ-bản&#34;&gt;🔹 2. &lt;code&gt;var&lt;/code&gt;, &lt;code&gt;let&lt;/code&gt;, &lt;code&gt;const&lt;/code&gt; — Sự khác biệt cơ bản&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-21-phạm-vi-scope&#34;&gt;📌 2.1 Phạm vi (Scope)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;code&gt;var&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Networking 101: Kiến thức mạng cơ bản dành cho Developer</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/networking-101-for-developers/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/networking-101-for-developers/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Hiểu OSI &amp;amp; TCP/IP, HTTP/HTTPS, DNS, IP/Subnetting để xây dựng và gỡ lỗi ứng dụng hiệu quả&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Lập trình web/mobile không chỉ là code — mà còn là &lt;strong&gt;giao tiếp qua mạng&lt;/strong&gt;. Khi bạn gọi API, load tài nguyên từ server, hoặc debug lỗi kết nối, kiến thức networking chính là chìa khóa để hiểu điều gì &lt;em&gt;đang xảy ra phía dưới&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Bài này tập trung vào các khái niệm cơ bản nhưng quan trọng nhất cho developer:&#xA;✔ Mô hình chuẩn OSI &amp;amp; TCP/IP.&#xA;✔ HTTP/HTTPS.&#xA;✔ DNS &amp;amp; cách hoạt động.&#xA;✔ Giao thức TCP &amp;amp; UDP.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/about/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/about/</guid>
+      <description>&lt;h2 id=&#34;về-bản-thân-tôi&#34;&gt;Về Bản Thân Tôi&lt;/h2&gt;&#xA;&lt;p&gt;Mình là Nguyễn Hải Quý, hiện đang theo học năm cuối chuyên ngành An Ninh mạng tại Trường Đại học Công nghệ TP.HCM (HUTECH). Mình tập trung vào việc hiểu sâu bản chất hệ thống, cơ chế bảo mật và các mô hình tấn công – phòng thủ, thay vì chỉ làm theo công cụ hoặc tutorial có sẵn.&lt;/p&gt;&#xA;&lt;p&gt;Định hướng nghề nghiệp của mình là kết nối kiến thức An Ninh mạng với các bài toán thực tiễn như bảo mật hệ thống, phân tích mã độc, phát hiện tấn công, và ứng dụng AI/ML trong an toàn thông tin. Mình tin rằng giá trị cốt lõi của An Ninh mạng nằm ở tư duy hệ thống và khả năng triển khai giải pháp trong môi trường thực tế.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/contact/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/contact/</guid>
+      <description>&lt;h1 id=&#34;liên-hệ-với-mình&#34;&gt;Liên hệ với mình&lt;/h1&gt;&#xA;&lt;p&gt;Bạn cần hỗ trợ hoặc muốn sử dụng dịch vụ? Điền form bên dưới nhé!&lt;/p&gt;&#xA;&lt;h2 id=&#34;form-liên-hệ&#34;&gt;Form liên hệ&lt;/h2&gt;&#xA;&lt;form id=&#34;contactForm&#34; class=&#34;contact-form&#34;&gt;&#xD;&#xA;&lt;div class=&#34;form-group&#34;&gt;&#xD;&#xA;&lt;label for=&#34;name&#34;&gt;Tên của bạn *&lt;/label&gt;&#xD;&#xA;&lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34; required placeholder=&#34;Nguyễn Văn A&#34;&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;div class=&#34;form-group&#34;&gt;&#xD;&#xA;&lt;label for=&#34;email&#34;&gt;Email *&lt;/label&gt;&#xD;&#xA;&lt;input type=&#34;email&#34; id=&#34;email&#34; name=&#34;email&#34; required placeholder=&#34;example@gmail.com&#34;&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;div class=&#34;form-group&#34;&gt;&#xD;&#xA;&lt;label for=&#34;service&#34;&gt;Loại dịch vụ *&lt;/label&gt;&#xD;&#xA;&lt;select id=&#34;service&#34; name=&#34;service&#34; required&gt;&#xD;&#xA;&lt;option value=&#34;&#34;&gt;-- Chọn dịch vụ --&lt;/option&gt;&#xD;&#xA;&lt;option value=&#34;code&#34;&gt;Tư vấn Code / Debug&lt;/option&gt;&#xD;&#xA;&lt;option value=&#34;facebook&#34;&gt;Tăng Like/Follow Facebook&lt;/option&gt;&#xD;&#xA;&lt;option value=&#34;nhau&#34;&gt;Tìm người đi nhậu 🍺&lt;/option&gt;&#xD;&#xA;&lt;option value=&#34;other&#34;&gt;Khác&lt;/option&gt;&#xD;&#xA;&lt;/select&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;div class=&#34;form-group&#34;&gt;&#xD;&#xA;&lt;label for=&#34;message&#34;&gt;Nội dung *&lt;/label&gt;&#xD;&#xA;&lt;textarea id=&#34;message&#34; name=&#34;message&#34; rows=&#34;6&#34; required placeholder=&#34;Mô tả chi tiết yêu cầu của bạn...&#34;&gt;&lt;/textarea&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;button type=&#34;submit&#34; class=&#34;submit-btn&#34;&gt;Gửi tin nhắn&lt;/button&gt;&#xD;&#xA;&lt;/form&gt;&#xD;&#xA;&lt;div id=&#34;formMessage&#34; class=&#34;form-message&#34;&gt;&lt;/div&gt;&#xD;&#xA;&lt;h2 id=&#34;thông-tin-liên-hệ&#34;&gt;Thông tin liên hệ&lt;/h2&gt;&#xA;&lt;p&gt;📧 &lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:quysun2356@gmail.com&#34;&gt;quysun2356@gmail.com&lt;/a&gt;&lt;br&gt;&#xA;📱 &lt;strong&gt;Facebook&lt;/strong&gt;: &lt;a href=&#34;https://www.facebook.com/HaiQuyThatTha24092003&#34;&gt;Hải Quý&lt;/a&gt;&lt;br&gt;&#xA;🎵 &lt;strong&gt;TikTok&lt;/strong&gt;: &lt;a href=&#34;https://www.tiktok.com/@boiboi_249&#34;&gt;@boiboi_249&lt;/a&gt;&lt;br&gt;&#xA;📺 &lt;strong&gt;YouTube&lt;/strong&gt;: &lt;a href=&#34;https://www.youtube.com/@haiquythattha12a97&#34;&gt;Hải Quý Channel&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mạng máy tính: Địa chỉ IP và phân đoạn mạng (Subnet)</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/dia-chi-ip-subnet/</link>
+      <pubDate>Thu, 18 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/dia-chi-ip-subnet/</guid>
+      <description>&lt;p&gt;Địa chỉ IP (Internet Protocol) là định danh của thiết bị trên mạng. Một địa chỉ IPv4 thường có dạng bốn số (0-255) cách nhau bằng dấu chấm, như &lt;code&gt;192.168.0.1&lt;/code&gt;. Phân đoạn mạng (Subnet) giúp chia một mạng lớn thành nhiều mạng con nhỏ hơn để quản lý hiệu quả hơn. Ví dụ dưới đây sử dụng Python để tính địa chỉ mạng và địa chỉ quảng bá của một mạng con /24.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mạng máy tính: Mô hình OSI</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/mo-hinh-osi/</link>
+      <pubDate>Wed, 17 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/mo-hinh-osi/</guid>
+      <description>&lt;p&gt;Mô hình OSI (Open Systems Interconnection) chia quá trình truyền dữ liệu mạng thành 7 tầng riêng biệt, từ tầng vật lý đến tầng ứng dụng. Mỗi tầng đảm nhận một vai trò cụ thể, giúp thiết kế và xử lý mạng dễ dàng hơn. Ví dụ sau sẽ liệt kê thứ tự của 7 tầng trong mô hình OSI:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;layers &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Vật lý&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Liên kết dữ liệu&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Mạng&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Giao vận&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Phiên&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Trình bày&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Ứng dụng&amp;#34;&lt;/span&gt;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i, layer &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; enumerate(layers, start&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Tầng &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;i&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;: &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;{&lt;/span&gt;layer&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Đoạn mã Python trên tạo một danh sách layers chứa tên 7 tầng của mô hình OSI. Vòng lặp for sẽ in ra thứ tự các tầng kèm tên tương ứng (ví dụ: Tầng 1 là &amp;ldquo;Vật lý&amp;rdquo;, Tầng 7 là &amp;ldquo;Ứng dụng&amp;rdquo;). Ví dụ này không thực hiện tính toán mạng thực tế, nhưng nó minh họa cách trình bày thông tin về mô hình OSI. Nhờ đó, người đọc có thể hình dung được cấu trúc phân lớp của mạng máy tính.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mạng máy tính: Khái niệm cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/gioi-thieu-mang-may-tinh/</link>
+      <pubDate>Tue, 16 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/gioi-thieu-mang-may-tinh/</guid>
+      <description>&lt;p&gt;Mạng máy tính là hệ thống các thiết bị và máy tính kết nối với nhau để trao đổi dữ liệu. Một khái niệm quan trọng trong mạng máy tính là địa chỉ IP và hostname của thiết bị. Ví dụ dưới đây sử dụng Python để lấy tên máy và địa chỉ IP của máy tính trong mạng cục bộ. Kết quả giúp minh họa khái niệm địa chỉ IP và cách xác định thiết bị trong mạng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: Lập trình bất đồng bộ với Promise</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/async-javascript/</link>
+      <pubDate>Mon, 15 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/async-javascript/</guid>
+      <description>&lt;p&gt;Trong JavaScript, lập trình bất đồng bộ (asynchronous) rất phổ biến, đặc biệt khi thực hiện các tác vụ như gọi API hoặc xử lý sau một khoảng thời gian. &lt;code&gt;Promise&lt;/code&gt; là một đối tượng dùng để xử lý kết quả bất đồng bộ. Ví dụ dưới đây tạo một Promise giả lập lấy dữ liệu sau 1 giây rồi in ra màn hình. Nhờ Promise, ta có thể sử dụng &lt;code&gt;.then&lt;/code&gt; để xử lý kết quả sau khi tác vụ hoàn thành.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: Truy cập và thay đổi DOM</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/dom-javascript/</link>
+      <pubDate>Sun, 14 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/dom-javascript/</guid>
+      <description>&lt;p&gt;DOM (Document Object Model) là cấu trúc dữ liệu đại diện cho các phần tử trên trang web. JavaScript cho phép ta tương tác và thay đổi nội dung của trang thông qua đối tượng DOM. Ví dụ dưới đây sẽ minh họa cách truy cập một thẻ HTML có &lt;code&gt;id&lt;/code&gt; và thay đổi nội dung của nó. Kết quả sẽ là nội dung ban đầu của trang được cập nhật bởi JavaScript.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript: Giới thiệu và ví dụ cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</link>
+      <pubDate>Sat, 13 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</guid>
+      <description>&lt;p&gt;JavaScript là ngôn ngữ lập trình phổ biến cho phát triển web, chạy trực tiếp trên trình duyệt. Nó có cú pháp linh hoạt và cho phép tương tác trực tiếp với người dùng hoặc trang web. Ví dụ sau sẽ giới thiệu cách sử dụng lệnh &lt;code&gt;console.log&lt;/code&gt; trong JavaScript để in thông báo ra bảng điều khiển (console). Qua đó, người học sẽ hiểu cách chạy JavaScript trong môi trường trình duyệt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Danh sách (ArrayList) cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/danh-sach-arraylist-co-ban/</link>
+      <pubDate>Fri, 12 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/danh-sach-arraylist-co-ban/</guid>
+      <description>&lt;p&gt;Trong Java, &lt;code&gt;ArrayList&lt;/code&gt; là một lớp trong thư viện chuẩn giúp lưu trữ danh sách các phần tử có thể thay đổi kích thước. Khác với mảng cố định, ArrayList có khả năng tự động điều chỉnh kích thước khi thêm hoặc xóa phần tử. Ví dụ dưới đây sẽ minh họa cách sử dụng &lt;code&gt;ArrayList&lt;/code&gt; để thêm và duyệt qua các phần tử số nguyên. Điều này giúp hiểu cơ chế quản lý danh sách trong Java.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Lập trình hướng đối tượng</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</link>
+      <pubDate>Thu, 11 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</guid>
+      <description>&lt;p&gt;Lập trình hướng đối tượng (OOP) là phương pháp lập trình dựa trên khái niệm lớp (class) và đối tượng (object). Java hỗ trợ OOP mạnh mẽ, cho phép định nghĩa các lớp với thuộc tính và phương thức. Ví dụ dưới đây sẽ minh họa cách tạo lớp đơn giản và sử dụng đối tượng trong Java. Qua đó, người đọc hiểu được cách khai báo thuộc tính và khởi tạo đối tượng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Hello World</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/hello-world-java/</link>
+      <pubDate>Wed, 10 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/hello-world-java/</guid>
+      <description>&lt;p&gt;Java là ngôn ngữ lập trình hướng đối tượng phổ biến. Bài viết này sẽ giới thiệu ví dụ cơ bản &amp;ldquo;Hello World&amp;rdquo; trong Java, nhằm minh họa cấu trúc của một chương trình Java. Cụ thể, chương trình sẽ in ra một thông điệp đơn giản trên màn hình. Đây là bước khởi đầu giúp người học làm quen với môi trường lập trình Java.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;HelloWorld&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Xin chào, Java!&amp;#34;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Trong ví dụ trên, ta định nghĩa một lớp HelloWorld. Phương thức main là điểm bắt đầu của chương trình Java. Dòng lệnh System.out.println(&amp;ldquo;Xin chào, Java!&amp;rdquo;); sẽ in thông điệp &amp;ldquo;Xin chào, Java!&amp;rdquo; lên màn hình console. Khi biên dịch (javac) và chạy chương trình (java), kết quả thu được là dòng chữ chào xuất hiện.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker nhập môn: Tại sao &#39;nó chạy trên máy tôi&#39; không còn là cái cớ</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/docker-basics/</link>
+      <pubDate>Mon, 06 Jan 2025 15:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/docker-basics/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Chạy trên máy tôi ngon lành mà ta?&amp;rdquo; 🤷‍♂️&#xA;Câu nói kinh điển này đã giết chết bao nhiêu tình đồng nghiệp giữa Dev và Tester/Ops. Môi trường (OS, thư viện, version) khác nhau chính là nguyên nhân.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt; ra đời để giải quyết tận gốc vấn đề này.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/posts/docker-basics.png&#34; alt=&#34;Docker Containers&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-container-vs-virtual-machine-máy-ảo&#34;&gt;1. Container vs Virtual Machine (Máy ảo)&lt;/h2&gt;&#xA;&lt;p&gt;Trước Docker, ta dùng Virtual Machine (VM). VM ảo hóa phần cứng (Hardware), mỗi VM cần cài cả một hệ điều hành (OS) riêng =&amp;gt; Nặng nề, khởi động chậm (vài phút).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RESTful API là gì? Tư duy thiết kế API chuẩn cho Backend Developer</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/rest-api-design/</link>
+      <pubDate>Sun, 05 Jan 2025 14:20:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/rest-api-design/</guid>
+      <description>&lt;p&gt;Trong thế giới microservices và frontend frameworks (React/Vue) hiện nay, API đóng vai trò mạch máu 🩸 kết nối mọi thứ. REST (Representational State Transfer) là tiêu chuẩn phổ biến nhất, nhưng nhiều người vẫn đang thiết kế API&amp;hellip; sai bét.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/posts/rest-api.png&#34; alt=&#34;REST API Architecture&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-resource-oriented-design-tư-duy-hướng-tài-nguyên&#34;&gt;1. Resource-Oriented Design (Tư duy hướng tài nguyên)&lt;/h2&gt;&#xA;&lt;p&gt;Sai lầm phổ biến nhất là đặt URL theo hành động (Action-based).&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;Sai:&lt;/strong&gt; &lt;code&gt;/getAllUsers&lt;/code&gt;, &lt;code&gt;/createUser&lt;/code&gt;, &lt;code&gt;/deleteUser?id=1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Đúng:&lt;/strong&gt; &lt;code&gt;GET /users&lt;/code&gt;, &lt;code&gt;POST /users&lt;/code&gt;, &lt;code&gt;DELETE /users/1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Trong REST, URL định danh &lt;strong&gt;Tài nguyên (Noun)&lt;/strong&gt;, còn &lt;strong&gt;HTTP Method (Verb)&lt;/strong&gt; định danh hành động.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nghệ thuật Clean Code: Code không chỉ để chạy, Code là để đọc</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/art-of-clean-code/</link>
+      <pubDate>Sat, 04 Jan 2025 08:30:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/art-of-clean-code/</guid>
+      <description>&lt;p&gt;Tại sao chúng ta dành 80% thời gian để đọc code và chỉ 20% để viết code mới? Nếu code của bạn &amp;ldquo;bốc mùi&amp;rdquo; (code smell), 80% thời gian đó sẽ là cực hình cho đồng nghiệp và chính bạn trong tương lai.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/posts/clean-code.png&#34; alt=&#34;Clean Code Art&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-đặt-tên-hãy-kể-một-câu-chuyện&#34;&gt;1. Đặt tên: Hãy kể một câu chuyện&lt;/h2&gt;&#xA;&lt;p&gt;Tên biến, tên hàm là thứ giao tiếp đầu tiên. Đừng đặt tên kiểu đánh đố.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Giải mã Spring Boot Auto Configuration: Ma thuật đằng sau @SpringBootApplication</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/spring-boot-autoconfig/</link>
+      <pubDate>Fri, 03 Jan 2025 10:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/spring-boot-autoconfig/</guid>
+      <description>&lt;p&gt;Nếu bạn đã từng code Spring MVC thời kỳ đầu (XML configuration hell), bạn sẽ thấy Spring Boot như một phép màu. Chỉ cần thêm dependency &lt;code&gt;spring-boot-starter-web&lt;/code&gt;, bùm! Bạn có ngay một Tomcat server chạy ở port 8080.&lt;/p&gt;&#xA;&lt;p&gt;Nhưng&amp;hellip; tại sao? Spring Boot có đọc suy nghĩ của bạn không? 🤔&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/posts/springboot-autoconfig.png&#34; alt=&#34;Spring Boot Auto Config&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-bản-chất-của-ma-thuật&#34;&gt;1. Bản chất của &amp;ldquo;Ma thuật&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Thực ra không có ma thuật nào cả. Tất cả nằm ở &lt;strong&gt;Auto Configuration&lt;/strong&gt;. Spring Boot tự động scan các file &lt;code&gt;.jar&lt;/code&gt; trong classpath của bạn và đoán cấu hình bạn có thể cần.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>JavaScript Bất đồng bộ: Từ Callback Hell đến Async/Await</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-async-await/</link>
+      <pubDate>Thu, 02 Jan 2025 09:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-async-await/</guid>
+      <description>&lt;p&gt;JavaScript là ngôn ngữ &lt;strong&gt;đơn luồng (single-threaded)&lt;/strong&gt;. Điều này có nghĩa là nó chỉ có thể làm một việc tại một thời điểm. Vậy làm thế nào để nó xử lý hàng ngàn request mạng, đọc file, và tương tác với người dùng cùng lúc mà không bị &amp;ldquo;đơ&amp;rdquo;?&lt;/p&gt;&#xA;&lt;p&gt;Câu trả lời nằm ở &lt;strong&gt;Asynchronous Programming&lt;/strong&gt; (Lập trình bất đồng bộ).&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/posts/js-async.png&#34; alt=&#34;JS Async&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-vấn-đề-callback-hell-&#34;&gt;1. Vấn đề: Callback Hell 😈&lt;/h2&gt;&#xA;&lt;p&gt;Ngày xửa ngày xưa, chúng ta xử lý bất đồng bộ bằng callback. Và khi các tác vụ phụ thuộc lẫn nhau, ta có thảm họa này:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm chủ 4 Tính chất của Lập trình Hướng đối tượng (OOP) trong Java</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-oop-core/</link>
+      <pubDate>Wed, 01 Jan 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-oop-core/</guid>
+      <description>&lt;p&gt;Lập trình hướng đối tượng (&lt;strong&gt;OOP&lt;/strong&gt;) không chỉ là một mô hình lập trình, nó là &amp;ldquo;tư duy&amp;rdquo; để mô hình hóa thế giới thực vào phần mềm. Là một Java Developer, việc hiểu sâu 4 trụ cột này sẽ phân biệt bạn giữa một &amp;ldquo;coder&amp;rdquo; và một &amp;ldquo;software engineer&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./images/posts/java-oop.png&#34; alt=&#34;Java OOP Concepts&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tính-đóng-gói-encapsulation---chiếc-hộp-đen-bảo-mật&#34;&gt;1. Tính Đóng gói (Encapsulation) - &amp;ldquo;Chiếc hộp đen bảo mật&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Hãy tưởng tượng một viên thuốc con nhộng 💊. Bạn sử dụng nó để chữa bệnh nhưng không hề biết (và không nên biết) các thành phần hóa học bên trong được trộn như thế nào. Bạn chỉ quan tâm đến lớp vỏ và tác dụng của nó.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Profile</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/profile/</guid>
+      <description>&lt;h1 id=&#34;hải-quý-onii-chan&#34;&gt;Hải Quý Onii-chan&lt;/h1&gt;&#xA;&lt;p&gt;Xin chào! Tôi là Hải Quý, một sinh viên đam mê lập trình và công nghệ.&lt;/p&gt;&#xA;&lt;h2 id=&#34;sở-thích&#34;&gt;Sở thích&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;💻 &lt;strong&gt;Lập trình&lt;/strong&gt;: Java, JavaScript, Python&lt;/li&gt;&#xA;&lt;li&gt;🌐 &lt;strong&gt;Network Programming&lt;/strong&gt;: Nghiên cứu về mạng máy tính và lập trình mạng&lt;/li&gt;&#xA;&lt;li&gt;📚 &lt;strong&gt;Học tập&lt;/strong&gt;: Luôn tìm hiểu các công nghệ mới&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;kỹ-năng&#34;&gt;Kỹ năng&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Ngôn ngữ lập trình&lt;/strong&gt;: Java, JavaScript, Python&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Web Development&lt;/strong&gt;: HTML, CSS, JavaScript&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Network&lt;/strong&gt;: Kiến thức cơ bản về mạng máy tính, giao thức TCP/IP&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Version Control&lt;/strong&gt;: Git, GitHub&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;mục-tiêu&#34;&gt;Mục tiêu&lt;/h2&gt;&#xA;&lt;p&gt;Blog này được tạo ra để:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

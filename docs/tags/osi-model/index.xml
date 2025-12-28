@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSI Model on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/osi-model/</link>
+    <description>Recent content in OSI Model on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Networking 101: Kiến thức mạng cơ bản dành cho Developer</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/networking-101-for-developers/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/networking-101-for-developers/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Hiểu OSI &amp;amp; TCP/IP, HTTP/HTTPS, DNS, IP/Subnetting để xây dựng và gỡ lỗi ứng dụng hiệu quả&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Lập trình web/mobile không chỉ là code — mà còn là &lt;strong&gt;giao tiếp qua mạng&lt;/strong&gt;. Khi bạn gọi API, load tài nguyên từ server, hoặc debug lỗi kết nối, kiến thức networking chính là chìa khóa để hiểu điều gì &lt;em&gt;đang xảy ra phía dưới&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Bài này tập trung vào các khái niệm cơ bản nhưng quan trọng nhất cho developer:&#xA;✔ Mô hình chuẩn OSI &amp;amp; TCP/IP.&#xA;✔ HTTP/HTTPS.&#xA;✔ DNS &amp;amp; cách hoạt động.&#xA;✔ Giao thức TCP &amp;amp; UDP.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

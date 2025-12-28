@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Đối Tượng on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/</link>
+    <description>Recent content in Đối Tượng on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Thu, 11 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java: Lập trình hướng đối tượng</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</link>
+      <pubDate>Thu, 11 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</guid>
+      <description>&lt;p&gt;Lập trình hướng đối tượng (OOP) là phương pháp lập trình dựa trên khái niệm lớp (class) và đối tượng (object). Java hỗ trợ OOP mạnh mẽ, cho phép định nghĩa các lớp với thuộc tính và phương thức. Ví dụ dưới đây sẽ minh họa cách tạo lớp đơn giản và sử dụng đối tượng trong Java. Qua đó, người đọc hiểu được cách khai báo thuộc tính và khởi tạo đối tượng.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

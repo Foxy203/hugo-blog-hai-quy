@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cơ Bản on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/c%C6%A1-b%E1%BA%A3n/</link>
+    <description>Recent content in Cơ Bản on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sat, 13 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/c%C6%A1-b%E1%BA%A3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript: Giới thiệu và ví dụ cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</link>
+      <pubDate>Sat, 13 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</guid>
+      <description>&lt;p&gt;JavaScript là ngôn ngữ lập trình phổ biến cho phát triển web, chạy trực tiếp trên trình duyệt. Nó có cú pháp linh hoạt và cho phép tương tác trực tiếp với người dùng hoặc trang web. Ví dụ sau sẽ giới thiệu cách sử dụng lệnh &lt;code&gt;console.log&lt;/code&gt; trong JavaScript để in thông báo ra bảng điều khiển (console). Qua đó, người học sẽ hiểu cách chạy JavaScript trong môi trường trình duyệt.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Hello World</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/hello-world-java/</link>
+      <pubDate>Wed, 10 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/hello-world-java/</guid>
+      <description>&lt;p&gt;Java là ngôn ngữ lập trình hướng đối tượng phổ biến. Bài viết này sẽ giới thiệu ví dụ cơ bản &amp;ldquo;Hello World&amp;rdquo; trong Java, nhằm minh họa cấu trúc của một chương trình Java. Cụ thể, chương trình sẽ in ra một thông điệp đơn giản trên màn hình. Đây là bước khởi đầu giúp người học làm quen với môi trường lập trình Java.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;HelloWorld&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Xin chào, Java!&amp;#34;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Trong ví dụ trên, ta định nghĩa một lớp HelloWorld. Phương thức main là điểm bắt đầu của chương trình Java. Dòng lệnh System.out.println(&amp;ldquo;Xin chào, Java!&amp;rdquo;); sẽ in thông điệp &amp;ldquo;Xin chào, Java!&amp;rdquo; lên màn hình console. Khi biên dịch (javac) và chạy chương trình (java), kết quả thu được là dòng chữ chào xuất hiện.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Máy Tính on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%A1y-t%C3%ADnh/</link>
+    <description>Recent content in Máy Tính on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Tue, 16 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%A1y-t%C3%ADnh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mạng máy tính: Khái niệm cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/gioi-thieu-mang-may-tinh/</link>
+      <pubDate>Tue, 16 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/network/gioi-thieu-mang-may-tinh/</guid>
+      <description>&lt;p&gt;Mạng máy tính là hệ thống các thiết bị và máy tính kết nối với nhau để trao đổi dữ liệu. Một khái niệm quan trọng trong mạng máy tính là địa chỉ IP và hostname của thiết bị. Ví dụ dưới đây sử dụng Python để lấy tên máy và địa chỉ IP của máy tính trong mạng cục bộ. Kết quả giúp minh họa khái niệm địa chỉ IP và cách xác định thiết bị trong mạng.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

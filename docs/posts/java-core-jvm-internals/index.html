@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="">
+    <title>Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String - Blog Lập Trình</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    
+    <link rel="stylesheet" href="../../css/custom.css">
+</head>
+
+<body>
+
+    
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="search-close" id="searchClose">&times;</button>
+            <input type="text" id="searchInput" placeholder="Tìm kiếm..." autofocus>
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    
+    <header id="site-header">
+    <div class="header-container">
+        <div class="site-branding">
+            <h1>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/" rel="home">Blog Lập Trình</a>
+            </h1>
+        </div>
+
+        
+        <div class="search-toggle">
+            <i class="fas fa-search"></i>
+            <span>Tìm kiếm...</span>
+        </div>
+
+        
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <nav id="navigation">
+            <ul class="nav" id="main-nav">
+                <li><a href="../../">Home</a></li>
+
+                
+                <li class="has-dropdown categories-dropdown">
+                    <button class="dropdown-toggle">
+                        Categories
+                        <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../categories/architecture/">
+                                Architecture
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/backend/">
+                                Backend
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/best-practices/">
+                                Best practices
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/devops/">
+                                Devops
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/engineering/">
+                                Engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/frontend/">
+                                Frontend
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/java/">
+                                Java
+                                <span class="post-count">(7)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/javascript/">
+                                Javascript
+                                <span class="post-count">(6)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">
+                                Mạng máy tính
+                                <span class="post-count">(3)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/networking/">
+                                Networking
+                                <span class="post-count">(2)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/software-engineering/">
+                                Software engineering
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/spring-boot/">
+                                Spring boot
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../categories/tools/">
+                                Tools
+                                <span class="post-count">(1)</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+                <li><a href="../../about/">About</a></li>
+                <li><a href="../../contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    
+    <div class="wrapper">
+        
+        <div class="centered-container">
+            
+            <div class="main-layout-container">
+
+                <main id="content">
+                    
+<article class="post-single">
+    <header class="post-header" style="margin-bottom: 30px;">
+        <div class="meta" style="font-size: 14px; color: #666; margin-bottom: 10px;">
+            <span>28 December 2025</span>
+            
+            <span style="margin: 0 10px;">•</span>
+            <span>Java, Backend</span>
+            
+        </div>
+
+        <h1 style="font-size: 36px; margin-bottom: 20px;">Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</h1>
+
+        
+        <div class="tags" style="margin-bottom: 20px;">
+            
+            <a href="../../%20/tags/java-core"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Java Core</a>
+            
+            <a href="../../%20/tags/jvm"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#JVM</a>
+            
+            <a href="../../%20/tags/memory-management"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Memory Management</a>
+            
+            <a href="../../%20/tags/performance"
+                style="background: #eee; padding: 4px 10px; font-size: 12px; border-radius: 4px; margin-right: 5px; color: #333;">#Performance</a>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="featured-image" style="margin-bottom: 40px;">
+        <img src="../../images/custom/java-jvm-architecture.jpg" alt="Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String" style="width: 100%; height: auto; border-radius: 4px;">
+    </div>
+    
+
+    <div class="post-content" style="font-size: 18px; line-height: 1.8;">
+        <p><em>Giải thích chi tiết về JVM, Stack vs Heap, String Pool và lý do <code>String</code> là immutable</em></p>
+<hr>
+<h2 id="-1-giới-thiệu">🧠 1. Giới thiệu</h2>
+<p>Java là một ngôn ngữ lập trình hướng đối tượng nổi tiếng với triết lý “<em>viết một lần, chạy mọi nơi</em>” (Write Once, Run Anywhere). Điều này được thực hiện nhờ vào <strong>Java Virtual Machine – JVM</strong>: một lớp trừu tượng giữa mã Java và hệ điều hành thực thi.</p>
+<p>Không chỉ hiểu cú pháp, một developer chuyên sâu cần biết <strong>JVM hoạt động như thế nào</strong>, <strong>bộ nhớ được tổ chức ra sao</strong>, và <strong>tại sao lại có String Pool &amp; immutable String</strong>. Những hiểu biết này không chỉ giúp <strong>tối ưu hiệu năng</strong> mà còn <strong>tránh bug liên quan đến bộ nhớ hoặc logic xử lý chuỗi</strong>.</p>
+<hr>
+<h2 id="-2-jvm-là-gì">🧠 2. JVM là gì?</h2>
+<p>JVM (Java Virtual Machine) là môi trường chạy bytecode Java. Sau khi bạn biên dịch <code>.java</code> thành <code>.class</code>, JVM:</p>
+<ul>
+<li>Nạp &amp; xác thực bytecode.</li>
+<li>Quản lý bộ nhớ (Heap &amp; Stack).</li>
+<li>Thực thi mã.</li>
+<li>Tự động <em>Garbage Collect</em> các object không còn dùng.</li>
+</ul>
+<p>JVM làm cho Java trở nên <strong>cross-platform</strong>: bytecode không phụ thuộc OS cụ thể.</p>
+<hr>
+<h2 id="-3-bộ-nhớ-jvm-stack-vs-heap">🧠 3. Bộ nhớ JVM: Stack vs Heap</h2>
+<h3 id="-heap">☁️ Heap</h3>
+<p>Heap là nơi lưu trữ <strong>object</strong> được tạo bằng <code>new</code> hoặc bởi JVM.</p>
+<ul>
+<li><strong>Chứa:</strong> đối tượng, mảng, String Pool.</li>
+<li>Quản lý bởi <strong>Garbage Collector</strong>.</li>
+<li>Là vùng chia sẻ giữa các thread.</li>
+</ul>
+<h3 id="-stack">📦 Stack</h3>
+<p>Stack là nơi lưu trữ:</p>
+<ul>
+<li>Biến cục bộ.</li>
+<li>Tham số method.</li>
+<li>Frame của mỗi method gọi.</li>
+</ul>
+<p>Stack hoạt động theo cơ chế <strong>LIFO</strong> (Last In First Out) và được <em>thu dọn ngay khi method kết thúc</em>. Nó chỉ chứa dữ liệu có thời gian tồn tại ngắn hạn.</p>
+<p>🔥 <strong>Điểm khác biệt:</strong></p>
+<ul>
+<li><strong>Heap:</strong> chứa object, lâu dài, chậm hơn.</li>
+<li><strong>Stack:</strong> chứa biến cục bộ, nhanh hơn, ngắn hạn.</li>
+</ul>
+<blockquote>
+<p>Stack &amp; Heap là hai phần khác nhau trong bộ nhớ JVM. Object hoặc literal <strong>không nằm trên stack</strong> — tất cả object đều nằm trong heap, stack chỉ chứa <strong>tham chiếu và biến nguyên thuần</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="-4-string-trong-java">🧠 4. String trong Java</h2>
+<h3 id="-thông-thường">📌 Thông thường</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;
+</span></span></code></pre></div><p>Java sẽ <strong>kiểm tra String Pool</strong> trước khi tạo object mới → nếu <code>&quot;Hello&quot;</code> đã tồn tại trong pool, JVM sẽ trả về reference tới literal đó. Nếu chưa, JVM thêm nó vào pool.</p>
+<p><strong>Lợi ích:</strong>
+✔ Tối ưu bộ nhớ — tránh tạo nhiều object trùng giá trị.
+✔ So sánh các literal bằng <code>==</code> là nhanh vì cùng reference.</p>
+<h3 id="-khi-dùng-new">📌 Khi dùng <code>new</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;Hello&#34;</span>);
+</span></span></code></pre></div><p>Điều này <strong>luôn tạo object mới trên heap</strong> dù giá trị giống với literal trong pool. Bạn cũng có thể ép JVM <strong>intern</strong> chuỗi đó để đưa vào pool bằng <code>intern()</code>.</p>
+<hr>
+<h2 id="-5-string-pool-là-gì">🧠 5. String Pool là gì?</h2>
+<p><strong>String Pool</strong> (hay String Constant Pool) là một vùng đặc biệt trong heap để <strong>lưu trữ các chuỗi literal</strong>. Khi JVM gặp literal, nó sẽ:</p>
+<ol>
+<li>Kiểm tra trong pool.</li>
+<li>Nếu đã tồn tại → dùng lại reference.</li>
+<li>Nếu chưa → tạo mới và thêm vào pool.</li>
+</ol>
+<p><strong>Ví dụ:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Java&#34;</span>;
+</span></span><span style="display:flex;"><span>String b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Java&#34;</span>;
+</span></span></code></pre></div><p>Hai biến <code>a</code> và <code>b</code> sẽ trỏ vào cùng một object trong pool.</p>
+<hr>
+<h2 id="-6-tại-sao-string-lại-immutable">🧠 6. Tại sao String lại <strong>immutable</strong>?</h2>
+<p>Java thiết kế <code>String</code> là <strong>immutable (bất biến)</strong> — một chuỗi đã được tạo thì <em>không thể thay đổi nội dung</em>.</p>
+<p>Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> s <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; World&#34;</span>;
+</span></span></code></pre></div><p>Lệnh trên không sửa <code>&quot;Hello&quot;</code> — mà tạo một object mới <code>&quot;Hello World&quot;</code> và gán lại cho <code>s</code>.</p>
+<h3 id="-lợi-ích-của-việc-immutable">🧩 Lợi ích của việc Immutable:</h3>
+<ol>
+<li><strong>Tối ưu bộ nhớ với String Pool:</strong> JVM reuse an toàn các literal vì chúng không thể thay đổi sau khi tạo.</li>
+<li><strong>Thread-safe tự nhiên:</strong> An toàn khi chia sẻ giữa nhiều thread mà không cần synchronization.</li>
+<li><strong>Bảo mật:</strong> Tránh rủi ro dữ liệu nhạy cảm (URL, token) bị thay đổi ngẫu nhiên.</li>
+</ol>
+<hr>
+<h2 id="-7-ví-dụ-thực-tế-minh-họa">🧠 7. Ví dụ thực tế minh họa</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringPoolExample</span> {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>       String s1 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Java&#34;</span>;
+</span></span><span style="display:flex;"><span>       String s2 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Java&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s1 <span style="color:#f92672">==</span> s2); <span style="color:#75715e">// true (Cùng tham chiếu Pool)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       String s3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String(<span style="color:#e6db74">&#34;Java&#34;</span>);
+</span></span><span style="display:flex;"><span>       System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s1 <span style="color:#f92672">==</span> s3); <span style="color:#75715e">// false (s3 ở Heap, s1 ở Pool)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       String s4 <span style="color:#f92672">=</span> s3.<span style="color:#a6e22e">intern</span>();
+</span></span><span style="display:flex;"><span>       System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(s1 <span style="color:#f92672">==</span> s4); <span style="color:#75715e">// true (s4 trỏ về Pool)</span>
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="-8-khi-nào-concatenation-tạo-object-mới">🧠 8. Khi nào concatenation tạo object mới?</h2>
+<p>Nếu bạn sử dụng các biến thay vì literal trong phép nối, JVM sẽ tạo một object mới trong heap:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>;
+</span></span><span style="display:flex;"><span>String b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;World&#34;</span>;
+</span></span><span style="display:flex;"><span>String c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b; <span style="color:#75715e">// Tạo mới ở Heap</span>
+</span></span></code></pre></div><p>Ở đây, vì toán hạng không phải literal thuần tuý, JVM sẽ tạo object mới chứ không reuse pool.</p>
+<hr>
+<h2 id="-9-tối-ưu-string">🧠 9. Tối ưu String</h2>
+<p>Nếu bạn cần xây dựng chuỗi phức tạp bằng nhiều vòng lặp hoặc concat, dùng <code>StringBuilder</code>/<code>StringBuffer</code> sẽ hiệu quả hơn vì <code>String</code> immutable tạo nhiều object gây overhead GC.</p>
+<hr>
+<h2 id="-10-tổng-kết">🧠 10. Tổng kết</h2>
+<p>✔ JVM quản lý bộ nhớ thông minh — tách rõ <strong>Stack &amp; Heap</strong>.
+✔ <strong>String Pool</strong> tối ưu bộ nhớ bằng cách reuse literal.
+✔ <strong>String Immutable</strong> giúp an toàn, thread-safe và dễ tối ưu.
+✔ Phải hiểu rõ cách JVM lưu trữ để tránh lỗi logic và memory inefficiency.</p>
+<hr>
+<p><em>Hiểu sâu về JVM Memory Model là bước đệm quan trọng để trở thành Senior Java Developer.</em></p>
+
+    </div>
+</article>
+
+                </main>
+
+                <aside id="sidebar">
+                    <div class="sidebar-wrapper">
+    
+    <div class="sidebar-widget about-widget">
+        <h2 class="widget-title">Về Bé Qíu</h2>
+        <div class="about-content">
+            <img src="../../images/profile.jpg" alt="Hải Quý" class="profile-image">
+            <p class="bio-text">Chia sẻ kiến thức về Java và JavaScript</p>
+
+            
+            <div class="social-icons">
+                
+                <a href="mailto:quysun2356@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                
+                <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                
+                
+                <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                
+                
+                <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-widget subscribe-widget">
+        <h2 class="widget-title">THEO DÕI BÀI VIẾT MỚI</h2>
+        <form class="subscribe-form" action="#" method="post">
+            <input type="email" placeholder="Địa chỉ email" required>
+            <button type="submit">GỬI</button>
+        </form>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">BÀI VIẾT GẦN ĐÂY</h2>
+        <ul class="recent-posts">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/">Advanced Exception Handling Patterns: Resilience &amp; Reliability</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/">Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/git-workflow-guide/">Git Flow &amp; Version Control: Quy trình làm việc nhóm chuyên nghiệp</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/">Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/posts/javascript-array-mastery/">JavaScript Array Methods Mastery: Map, Filter, Reduce &amp; Find</a>
+                <span class="post-date">28/12/2025</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">DANH MỤC</h2>
+        <ul class="category-list">
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/architecture/">Architecture</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/backend/">Backend</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/best-practices/">Best Practices</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/devops/">DevOps</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/engineering/">Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/frontend/">Frontend</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/java/">Java</a>
+                <span class="count">(7)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/javascript/">JavaScript</a>
+                <span class="count">(6)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">Mạng Máy Tính</a>
+                <span class="count">(3)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/networking/">Networking</a>
+                <span class="count">(2)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/software-engineering/">Software Engineering</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/spring-boot/">Spring Boot</a>
+                <span class="count">(1)</span>
+            </li>
+            
+            <li>
+                <a href="https://foxy203.github.io/hugo-blog-hai-quy/categories/tools/">Tools</a>
+                <span class="count">(1)</span>
+            </li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="sidebar-widget">
+        <h2 class="widget-title">TAGS</h2>
+        <div class="tag-cloud">
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/api/">API</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/array-methods/">Array Methods</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/arraylist/">ArrayList</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/async/">Async</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/asynchronous/">Asynchronous</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/backend/">Backend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/best-practices/">Best Practices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/b%E1%BA%A5t-%C4%91%E1%BB%93ng-b%E1%BB%99/">Bất Đồng Bộ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/clean-code/">Clean Code</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/console/">Console</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/container/">Container</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/c%C6%A1-b%E1%BA%A3n/">Cơ Bản</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/danh-s%C3%A1ch/">Danh Sách</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/deployment/">Deployment</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dns/">DNS</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/docker/">Docker</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/dom/">DOM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/es6/">ES6</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-handling/">Exception Handling</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/exception-patterns/">Exception Patterns</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/framework/">Framework</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/frontend/">Frontend</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/functional-programming/">Functional Programming</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/git/">Git</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/html/">HTML</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/http/">HTTP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/interview-questions/">Interview Questions</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/ip/">IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java/">Java</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/java-core/">Java Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript/">JavaScript</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/javascript-core/">JavaScript Core</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/jvm/">JVM</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/kh%C3%A1i-ni%E1%BB%87m/">Khái Niệm</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BA%ADp-tr%C3%ACnh/">Lập Trình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/l%E1%BB%9Bp/">Lớp</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/memory-management/">Memory Management</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/microservices/">Microservices</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%A1y-t%C3%ADnh/">Máy Tính</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%C3%B4-h%C3%ACnh/">Mô Hình</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/m%E1%BA%A1ng/">Mạng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/oop/">OOP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi/">OSI</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/osi-model/">OSI Model</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/performance/">Performance</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/promise/">Promise</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/refactoring/">Refactoring</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/resilience/">Resilience</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/security/">Security</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/subnet/">Subnet</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/tcp/ip/">TCP/IP</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/teamwork/">Teamwork</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%C6%B0%C6%A1ng-t%C3%A1c/">Tương Tác</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/t%E1%BA%A7ng/">Tầng</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/version-control/">Version Control</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/v%C3%AD-d%E1%BB%A5/">Ví Dụ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/web-service/">Web Service</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/workflow/">Workflow</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%8Ba-ch%E1%BB%89/">Địa Chỉ</a>
+            
+            <a href="https://foxy203.github.io/hugo-blog-hai-quy/tags/%C4%91%E1%BB%91i-t%C6%B0%E1%BB%A3ng/">Đối Tượng</a>
+            
+        </div>
+    </div>
+</div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    
+                    <li><a href="../../">Home</a></li>
+                    
+                    <li><a href="../../categories/java/">Java</a></li>
+                    
+                    <li><a href="../../categories/javascript/">JavaScript</a></li>
+                    
+                    <li><a href="../../about/">About</a></li>
+                    
+                    <li><a href="../../contact/">Contact</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-social">
+                    
+                    <a href="mailto:quysun2356@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    
+                    
+                    <a href="https://www.facebook.com/HaiQuyThatTha24092003" title="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
+                    
+                    <a href="https://www.tiktok.com/@boiboi_249" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    
+                    
+                    <a href="https://www.youtube.com/@haiquythattha12a97" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    
+                </div>
+                <p>&copy; 2025 Blog Lập Trình. All rights reserved.</p>
+                <p class="powered-by">Powered by Hugo</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+    <script src="../../js/search.js"></script>
+    <script src="../../js/main.js"></script>
+
+</body>
+
+</html>

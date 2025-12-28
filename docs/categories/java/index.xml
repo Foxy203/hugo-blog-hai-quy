@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/categories/java/</link>
+    <description>Recent content in Java on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advanced Exception Handling Patterns: Resilience &amp; Reliability</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-advanced-exception-handling/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Thiết kế xử lý lỗi bền vững: logging, retry, fallback, propagation &amp;amp; patterns nâng cao&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-tại-sao-phải-thiết-kế-exception-handling-chuyên-nghiệp&#34;&gt;🧠 1. Tại sao phải thiết kế Exception Handling chuyên nghiệp?&lt;/h2&gt;&#xA;&lt;p&gt;Exception không chỉ là “bắt và in ra console”. Trong ứng dụng thực tế — đặc biệt ứng dụng backend, distributed systems hoặc microservices — bạn cần:&lt;/p&gt;&#xA;&lt;p&gt;✔ &lt;strong&gt;Log có ngữ cảnh đầy đủ&lt;/strong&gt; để debug nhanh.&#xA;✔ &lt;strong&gt;Không nuốt lỗi vô nghĩa&lt;/strong&gt;.&#xA;✔ &lt;strong&gt;Retry logic&lt;/strong&gt; cho lỗi tạm thời (transient failure).&#xA;✔ &lt;strong&gt;Fallback&lt;/strong&gt; để giữ hệ thống hoạt động với degraded behavior.&#xA;✔ &lt;strong&gt;Exception chaining&lt;/strong&gt; để giữ nguyên nhân gốc của lỗi.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Exception Handling trong Java: Checked, Unchecked &amp; Best Practices</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-exception-handling/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Phân biệt Checked vs Unchecked, khi nào bắt, custom exception và best practice&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Exception (ngoại lệ) là một &lt;strong&gt;tình huống bất thường&lt;/strong&gt; xảy ra trong quá trình thực thi chương trình, làm gián đoạn luồng bình thường của ứng dụng. Java cung cấp cơ chế &lt;strong&gt;Exception Handling&lt;/strong&gt; giúp bạn xử lý các tình huống này một cách rõ ràng, an toàn và tránh crash chương trình.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Giải thích chi tiết về JVM, Stack vs Heap, String Pool và lý do &lt;code&gt;String&lt;/code&gt; là immutable&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Java là một ngôn ngữ lập trình hướng đối tượng nổi tiếng với triết lý “&lt;em&gt;viết một lần, chạy mọi nơi&lt;/em&gt;” (Write Once, Run Anywhere). Điều này được thực hiện nhờ vào &lt;strong&gt;Java Virtual Machine – JVM&lt;/strong&gt;: một lớp trừu tượng giữa mã Java và hệ điều hành thực thi.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Danh sách (ArrayList) cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/danh-sach-arraylist-co-ban/</link>
+      <pubDate>Fri, 12 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/danh-sach-arraylist-co-ban/</guid>
+      <description>&lt;p&gt;Trong Java, &lt;code&gt;ArrayList&lt;/code&gt; là một lớp trong thư viện chuẩn giúp lưu trữ danh sách các phần tử có thể thay đổi kích thước. Khác với mảng cố định, ArrayList có khả năng tự động điều chỉnh kích thước khi thêm hoặc xóa phần tử. Ví dụ dưới đây sẽ minh họa cách sử dụng &lt;code&gt;ArrayList&lt;/code&gt; để thêm và duyệt qua các phần tử số nguyên. Điều này giúp hiểu cơ chế quản lý danh sách trong Java.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Lập trình hướng đối tượng</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</link>
+      <pubDate>Thu, 11 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/lap-trinh-huong-doi-tuong-java/</guid>
+      <description>&lt;p&gt;Lập trình hướng đối tượng (OOP) là phương pháp lập trình dựa trên khái niệm lớp (class) và đối tượng (object). Java hỗ trợ OOP mạnh mẽ, cho phép định nghĩa các lớp với thuộc tính và phương thức. Ví dụ dưới đây sẽ minh họa cách tạo lớp đơn giản và sử dụng đối tượng trong Java. Qua đó, người đọc hiểu được cách khai báo thuộc tính và khởi tạo đối tượng.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Java: Hello World</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/hello-world-java/</link>
+      <pubDate>Wed, 10 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/java/hello-world-java/</guid>
+      <description>&lt;p&gt;Java là ngôn ngữ lập trình hướng đối tượng phổ biến. Bài viết này sẽ giới thiệu ví dụ cơ bản &amp;ldquo;Hello World&amp;rdquo; trong Java, nhằm minh họa cấu trúc của một chương trình Java. Cụ thể, chương trình sẽ in ra một thông điệp đơn giản trên màn hình. Đây là bước khởi đầu giúp người học làm quen với môi trường lập trình Java.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;HelloWorld&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;(String&lt;span style=&#34;color:#f92672&#34;&gt;[]&lt;/span&gt; args) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        System.&lt;span style=&#34;color:#a6e22e&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Xin chào, Java!&amp;#34;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Trong ví dụ trên, ta định nghĩa một lớp HelloWorld. Phương thức main là điểm bắt đầu của chương trình Java. Dòng lệnh System.out.println(&amp;ldquo;Xin chào, Java!&amp;rdquo;); sẽ in thông điệp &amp;ldquo;Xin chào, Java!&amp;rdquo; lên màn hình console. Khi biên dịch (javac) và chạy chương trình (java), kết quả thu được là dòng chữ chào xuất hiện.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Làm chủ 4 Tính chất của Lập trình Hướng đối tượng (OOP) trong Java</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-oop-core/</link>
+      <pubDate>Wed, 01 Jan 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-oop-core/</guid>
+      <description>&lt;p&gt;Lập trình hướng đối tượng (&lt;strong&gt;OOP&lt;/strong&gt;) không chỉ là một mô hình lập trình, nó là &amp;ldquo;tư duy&amp;rdquo; để mô hình hóa thế giới thực vào phần mềm. Là một Java Developer, việc hiểu sâu 4 trụ cột này sẽ phân biệt bạn giữa một &amp;ldquo;coder&amp;rdquo; và một &amp;ldquo;software engineer&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/java-oop.png&#34; alt=&#34;Java OOP Concepts&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-tính-đóng-gói-encapsulation---chiếc-hộp-đen-bảo-mật&#34;&gt;1. Tính Đóng gói (Encapsulation) - &amp;ldquo;Chiếc hộp đen bảo mật&amp;rdquo;&lt;/h2&gt;&#xA;&lt;p&gt;Hãy tưởng tượng một viên thuốc con nhộng 💊. Bạn sử dụng nó để chữa bệnh nhưng không hề biết (và không nên biết) các thành phần hóa học bên trong được trộn như thế nào. Bạn chỉ quan tâm đến lớp vỏ và tác dụng của nó.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

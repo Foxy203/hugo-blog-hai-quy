@@ -1,4 +1,5 @@
 baseURL = "https://foxy203.github.io/hugo-blog-hai-quy/"
+publishDir = "docs"
 languageCode = "vi"
 title = "Blog Lập Trình"
 

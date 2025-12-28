@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backend on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/categories/backend/</link>
+    <description>Recent content in Backend on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/categories/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Core &amp; JVM: Bộ Nhớ, String Pool và Immutable String</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/java-core-jvm-internals/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Giải thích chi tiết về JVM, Stack vs Heap, String Pool và lý do &lt;code&gt;String&lt;/code&gt; là immutable&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Java là một ngôn ngữ lập trình hướng đối tượng nổi tiếng với triết lý “&lt;em&gt;viết một lần, chạy mọi nơi&lt;/em&gt;” (Write Once, Run Anywhere). Điều này được thực hiện nhờ vào &lt;strong&gt;Java Virtual Machine – JVM&lt;/strong&gt;: một lớp trừu tượng giữa mã Java và hệ điều hành thực thi.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Promise on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/promise/</link>
+    <description>Recent content in Promise on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Mon, 15 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/promise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript: Lập trình bất đồng bộ với Promise</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/async-javascript/</link>
+      <pubDate>Mon, 15 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/async-javascript/</guid>
+      <description>&lt;p&gt;Trong JavaScript, lập trình bất đồng bộ (asynchronous) rất phổ biến, đặc biệt khi thực hiện các tác vụ như gọi API hoặc xử lý sau một khoảng thời gian. &lt;code&gt;Promise&lt;/code&gt; là một đối tượng dùng để xử lý kết quả bất đồng bộ. Ví dụ dưới đây tạo một Promise giả lập lấy dữ liệu sau 1 giây rồi in ra màn hình. Nhờ Promise, ta có thể sử dụng &lt;code&gt;.then&lt;/code&gt; để xử lý kết quả sau khi tác vụ hoàn thành.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

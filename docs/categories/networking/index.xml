@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/categories/networking/</link>
+    <description>Recent content in Networking on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/categories/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Networking 101: Kiến thức mạng cơ bản dành cho Developer</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/networking-101-for-developers/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/networking-101-for-developers/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Hiểu OSI &amp;amp; TCP/IP, HTTP/HTTPS, DNS, IP/Subnetting để xây dựng và gỡ lỗi ứng dụng hiệu quả&lt;/em&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-giới-thiệu&#34;&gt;🧠 1. Giới thiệu&lt;/h2&gt;&#xA;&lt;p&gt;Lập trình web/mobile không chỉ là code — mà còn là &lt;strong&gt;giao tiếp qua mạng&lt;/strong&gt;. Khi bạn gọi API, load tài nguyên từ server, hoặc debug lỗi kết nối, kiến thức networking chính là chìa khóa để hiểu điều gì &lt;em&gt;đang xảy ra phía dưới&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Bài này tập trung vào các khái niệm cơ bản nhưng quan trọng nhất cho developer:&#xA;✔ Mô hình chuẩn OSI &amp;amp; TCP/IP.&#xA;✔ HTTP/HTTPS.&#xA;✔ DNS &amp;amp; cách hoạt động.&#xA;✔ Giao thức TCP &amp;amp; UDP.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RESTful API là gì? Tư duy thiết kế API chuẩn cho Backend Developer</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/posts/rest-api-design/</link>
+      <pubDate>Sun, 05 Jan 2025 14:20:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/posts/rest-api-design/</guid>
+      <description>&lt;p&gt;Trong thế giới microservices và frontend frameworks (React/Vue) hiện nay, API đóng vai trò mạch máu 🩸 kết nối mọi thứ. REST (Representational State Transfer) là tiêu chuẩn phổ biến nhất, nhưng nhiều người vẫn đang thiết kế API&amp;hellip; sai bét.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../images/posts/rest-api.png&#34; alt=&#34;REST API Architecture&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-resource-oriented-design-tư-duy-hướng-tài-nguyên&#34;&gt;1. Resource-Oriented Design (Tư duy hướng tài nguyên)&lt;/h2&gt;&#xA;&lt;p&gt;Sai lầm phổ biến nhất là đặt URL theo hành động (Action-based).&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;❌ &lt;strong&gt;Sai:&lt;/strong&gt; &lt;code&gt;/getAllUsers&lt;/code&gt;, &lt;code&gt;/createUser&lt;/code&gt;, &lt;code&gt;/deleteUser?id=1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;Đúng:&lt;/strong&gt; &lt;code&gt;GET /users&lt;/code&gt;, &lt;code&gt;POST /users&lt;/code&gt;, &lt;code&gt;DELETE /users/1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Trong REST, URL định danh &lt;strong&gt;Tài nguyên (Noun)&lt;/strong&gt;, còn &lt;strong&gt;HTTP Method (Verb)&lt;/strong&gt; định danh hành động.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

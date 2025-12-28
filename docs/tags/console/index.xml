@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Console on Blog Lập Trình</title>
+    <link>https://foxy203.github.io/hugo-blog-hai-quy/tags/console/</link>
+    <description>Recent content in Console on Blog Lập Trình</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <managingEditor>quysun2356@gmail.com (Hải Quý)</managingEditor>
+    <webMaster>quysun2356@gmail.com (Hải Quý)</webMaster>
+    <lastBuildDate>Sat, 13 Dec 2025 08:00:00 +0700</lastBuildDate>
+    <atom:link href="https://foxy203.github.io/hugo-blog-hai-quy/tags/console/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript: Giới thiệu và ví dụ cơ bản</title>
+      <link>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</link>
+      <pubDate>Sat, 13 Dec 2025 08:00:00 +0700</pubDate><author>quysun2356@gmail.com (Hải Quý)</author>
+      <guid>https://foxy203.github.io/hugo-blog-hai-quy/blog/javascript/gioi-thieu-javascript/</guid>
+      <description>&lt;p&gt;JavaScript là ngôn ngữ lập trình phổ biến cho phát triển web, chạy trực tiếp trên trình duyệt. Nó có cú pháp linh hoạt và cho phép tương tác trực tiếp với người dùng hoặc trang web. Ví dụ sau sẽ giới thiệu cách sử dụng lệnh &lt;code&gt;console.log&lt;/code&gt; trong JavaScript để in thông báo ra bảng điều khiển (console). Qua đó, người học sẽ hiểu cách chạy JavaScript trong môi trường trình duyệt.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
