@@ -2,6 +2,13 @@ baseURL = "https://foxy203.github.io/hugo-blog-hai-quy/"
 languageCode = "vi"
 title = "Blog Lập Trình"
 
+# QUAN TRỌNG: Cấu hình này giúp web chạy được cả trên Local và GitHub Pages
+relativeURLs = true
+canonifyURLs = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   description = "Chia sẻ kiến thức về Java và JavaScript"
   
@@ -14,10 +21,6 @@ title = "Blog Lập Trình"
     accent = "#ff7760"
     highlight = "#9de2ea"
     background = "#f9f9f9"
-  
-  [params.typography]
-    body_font = "Poppins, -apple-system, sans-serif"
-    heading_font = "Poppins, sans-serif"
   
   [params.header]
     layout = "sticky"
@@ -58,5 +61,4 @@ title = "Blog Lập Trình"
       unsafe = true
   [markup.highlight]
     style = "monokai"
-    lineNos = true
-    lineNumbersInTable = true
+    tabWidth = 4

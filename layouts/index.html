@@ -1,73 +1,87 @@
 {{ define "main" }}
-<div class="mag_block mag_block_3">
+<div class="homepage-wrapper">
 
-    <!-- Featured/Sticky Posts -->
-    {{ $featured := where .Site.RegularPages "Params.featured" true }}
-    {{ if eq (len $featured) 0 }}
-    {{ $featured = first 3 .Site.RegularPages }}
-    {{ end }}
+    <!-- 1. FEATURED SECTION (Top 1 Post) -->
+    <!-- Get strict list of blog posts only -->
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ $featured := first 1 $posts }}
 
     {{ range $featured }}
-    <div class="item mag3_post {{ if .Params.featured }}sticky{{ end }}">
-        <div class="entryhead">
-            <div class="imgwrap">
+    <section class="featured-section">
+        <h3 class="section-title"><span>BÀI VIẾT NỔI BẬT</span></h3>
+        <article class="featured-post">
+            <span class="featured-badge"><i class="fas fa-star"></i> Featured</span>
+            <div class="featured-thumb">
                 <a href="{{ .Permalink }}">
-                    {{ $image := .Params.image | default "https://placehold.co/437x400/f0f0f0/999?text=Image" }}
-                    <img src="{{ $image }}" alt="{{ .Title }}" class="standard grayscale">
+                    {{ $image := .Params.image | default "/images/default-thumbnail.jpg" }}
+                    <img src="{{ $image }}" alt="{{ .Title }}">
                 </a>
             </div>
-        </div>
-
-        <div class="item_inn">
-            <p class="meta meta_deko">
-                <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
-                <span class="divider">•</span>
-                {{ with .Params.categories }}
-                <span class="categs">
-                    {{ range first 1 . }}
-                    <a href="{{ " /categories/" | relLangURL }}{{ . | urlize }}">{{ upper . }}</a>
+            <div class="featured-content">
+                <div class="post-meta-top">
+                    <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
+                    <span class="meta-divider">•</span>
+                    {{ with .Params.categories }}
+                    <span class="post-cat">
+                        {{ range first 1 . }}
+                        <a href="{{ " /categories/" | relURL }}{{ . | urlize }}/">{{ upper . }}</a>
+                        {{ end }}
+                    </span>
                     {{ end }}
-                </span>
-                {{ end }}
-            </p>
-
-            <h2 class="posttitle">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </h2>
-
-            <div class="teaser">
-                <p>{{ .Summary | truncate 200 }}</p>
+                </div>
+                <h2 class="featured-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                <div class="featured-excerpt">
+                    {{ .Summary | truncate 220 }}
+                </div>
+                <a href="{{ .Permalink }}" class="read-more-btn">Đọc tiếp <i class="fas fa-arrow-right"></i></a>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
     {{ end }}
 
-    <!-- Regular Posts Grid -->
-    <h3 class="section-title">BÀI VIẾT KHÁC</h3>
+    <!-- 2. LATEST POSTS LIST (Remaining posts) -->
+    <section class="latest-posts-section">
+        <h3 class="section-title"><span>BÀI VIẾT MỚI NHẤT</span></h3>
+        <div class="posts-list-container">
+            <!-- Range over the rest of the posts -->
+            {{ range after 1 $posts }}
+            <article class="post-card-horizontal">
+                <div class="post-thumb">
+                    <a href="{{ .Permalink }}">
+                        {{ $image := .Params.image | default "/images/default-thumbnail.jpg" }}
+                        <img src="{{ $image }}" alt="{{ .Title }}" loading="lazy">
+                    </a>
+                </div>
 
-    <div class="blog-grid">
-        {{ range after 3 .Site.RegularPages }}
-        <div class="post-card">
-            {{ if .Params.image }}
-            <div class="card-image">
-                <a href="{{ .Permalink }}">
-                    <img src="{{ .Params.image }}" alt="{{ .Title }}">
-                </a>
-            </div>
+                <div class="post-content-wrap">
+                    <div class="post-meta-top">
+                        <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
+                        <span class="meta-divider">•</span>
+                        {{ with .Params.categories }}
+                        <span class="post-cat">
+                            {{ range first 1 . }}
+                            <a href="{{ " /categories/" | relURL }}{{ . | urlize }}/">{{ upper . }}</a>
+                            {{ end }}
+                        </span>
+                        {{ end }}
+                    </div>
+
+                    <h2 class="post-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h2>
+
+                    <div class="post-excerpt">
+                        {{ .Summary | truncate 150 }}
+                    </div>
+                </div>
+            </article>
             {{ end }}
-
-            <div class="card-content">
-                <p class="meta">
-                    <span class="post-date">{{ .Date.Format "02/01/2006" }}</span>
-                </p>
-                <h3 class="card-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h3>
-                <p class="card-excerpt">{{ .Summary | truncate 120 }}</p>
-            </div>
         </div>
-        {{ end }}
-    </div>
+    </section>
 
+    <!-- Pagination (Standard Hugo Pagination) -->
+    {{ template "_internal/pagination.html" . }}
 </div>
 {{ end }}

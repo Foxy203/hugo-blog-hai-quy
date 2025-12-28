@@ -9,22 +9,42 @@
         <!-- Search in Center -->
         <div class="search-toggle">
             <i class="fas fa-search"></i>
+            <span>Tìm kiếm...</span>
         </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
 
         <nav id="navigation">
             <ul class="nav" id="main-nav">
-                {{ range .Site.Menus.main }}
-                <li class="{{ if .HasChildren }}has-dropdown{{ end }}">
-                    <a href="{{ .URL }}">{{ .Name }}</a>
-                    {{ if .HasChildren }}
-                    <ul class="dropdown">
-                        {{ range .Children }}
-                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                <li><a href="/">Home</a></li>
+
+                <!-- Categories Dropdown -->
+                <li class="has-dropdown categories-dropdown">
+                    <button class="dropdown-toggle">
+                        Categories
+                        <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        {{ $categories := .Site.Taxonomies.categories }}
+                        {{ range $name, $taxonomy := $categories }}
+                        <li>
+                            <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}/">
+                                {{ $name | humanize }}
+                                <span class="post-count">({{ len $taxonomy }})</span>
+                            </a>
+                        </li>
                         {{ end }}
                     </ul>
-                    {{ end }}
                 </li>
-                {{ end }}
+
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
         </nav>
     </div>

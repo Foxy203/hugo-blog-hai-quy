@@ -1,93 +1,128 @@
-// Search functionality
-document.addEventListener('DOMContentLoaded', function () {
-    const searchToggle = document.querySelector('.search-toggle');
-    const searchOverlay = document.getElementById('searchOverlay');
-    const searchClose = document.getElementById('searchClose');
-    const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
+// Theme Switcher
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
 
-    // Open search overlay
-    if (searchToggle) {
-        searchToggle.addEventListener('click', function () {
-            searchOverlay.classList.add('active');
-            searchInput.focus();
-        });
+// Load saved theme or default to light
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+
+// Update toggle icon based on current theme
+function updateToggleIcon() {
+    const icon = themeToggle.querySelector('i');
+    if (html.getAttribute('data-theme') === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
     }
+}
 
-    // Close search overlay
-    if (searchClose) {
-        searchClose.addEventListener('click', function () {
-            searchOverlay.classList.remove('active');
-            searchInput.value = '';
-            searchResults.innerHTML = '';
-        });
-    }
+// Toggle theme
+if (themeToggle) {
+    updateToggleIcon();
 
-    // Close on ESC key
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
-            searchOverlay.classList.remove('active');
-            searchInput.value = '';
-            searchResults.innerHTML = '';
-        }
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateToggleIcon();
     });
+}
 
-    // Close on overlay click
-    searchOverlay.addEventListener('click', function (e) {
+// Existing search functionality
+const searchToggle = document.querySelector('.search-toggle');
+const searchOverlay = document.getElementById('searchOverlay');
+const searchClose = document.getElementById('searchClose');
+const searchInput = document.getElementById('searchInput');
+
+if (searchToggle) {
+    searchToggle.addEventListener('click', () => {
+        searchOverlay.classList.add('active');
+        setTimeout(() => searchInput?.focus(), 100);
+    });
+}
+
+if (searchClose) {
+    searchClose.addEventListener('click', () => {
+        searchOverlay.classList.remove('active');
+        searchInput.value = '';
+    });
+}
+
+if (searchOverlay) {
+    searchOverlay.addEventListener('click', (e) => {
         if (e.target === searchOverlay) {
             searchOverlay.classList.remove('active');
             searchInput.value = '';
-            searchResults.innerHTML = '';
         }
     });
+}
 
-    // Search functionality (simple client-side search)
-    let searchTimeout;
-    if (searchInput) {
-        searchInput.addEventListener('input', function () {
-            clearTimeout(searchTimeout);
-            const query = this.value.trim().toLowerCase();
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && searchOverlay?.classList.contains('active')) {
+        searchOverlay.classList.remove('active');
+        searchInput.value = '';
+    }
+});
 
-            if (query.length < 2) {
-                searchResults.innerHTML = '';
-                return;
+// Scroll to top
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+    if (scrollToTopBtn) {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    }
+});
+
+if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
+        }
+    });
+});
 
-            searchTimeout = setTimeout(function () {
-                // This is a placeholder - you'll need to implement actual search
-                // For now, we'll show a message
-                searchResults.innerHTML = `
-                    <div class="search-result-item">
-                        <div class="search-result-title">Tìm kiếm: "${query}"</div>
-                        <div class="search-result-excerpt">Chức năng tìm kiếm đang được phát triển...</div>
-                    </div>
-                `;
-            }, 300);
+// Dropdown Mobile Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdown = document.querySelector('.categories-dropdown');
+    const toggleBtn = document.querySelector('.dropdown-toggle');
+
+    if (dropdown && toggleBtn) {
+        // Toggle on click (Mobile & Tablet)
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent document click from closing immediately
+            dropdown.classList.toggle('active');
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
         });
     }
 });
 
-// Scroll to top button
-window.addEventListener('scroll', function () {
-    const scrollBtn = document.querySelector('.scroll-to-top');
-    if (scrollBtn) {
-        if (window.pageYOffset > 300) {
-            scrollBtn.classList.add('show');
-        } else {
-            scrollBtn.classList.remove('show');
-        }
-    }
-});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});

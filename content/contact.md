@@ -62,6 +62,18 @@ Bạn cần hỗ trợ hoặc muốn sử dụng dịch vụ? Điền form bên 
 - Khu vực TP.HCM
 - Liên hệ sớm để book lịch!
 
+<div style="display: flex; gap: 15px; margin-top: 15px; flex-wrap: nowrap; overflow-x: auto;">
+  <div style="flex: 1; min-width: 0;">
+    <img src="/images/nhau1.jpg" alt="Nhậu 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+  </div>
+  <div style="flex: 1; min-width: 0;">
+    <img src="/images/nhau2.jpg" alt="Nhậu 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+  </div>
+  <div style="flex: 1; min-width: 0;">
+    <img src="/images/nhau3.jpg" alt="Nhậu 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+  </div>
+</div>
+
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
